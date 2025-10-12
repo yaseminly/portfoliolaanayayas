@@ -3,37 +3,47 @@
 .podcast-header-title {
   font-size: 56px;
   font-weight: 400;
-  line-height: 0px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.podcast {
-  width: 300px;
+.podcast-header-subtitle {
+  font-size: 20px;
+  color: $subTitle;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .podcast-main-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
-}
-.subTitle {
-  color: $subTitle;
+  width: 100vw; /* prend toute la largeur de la fenêtre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
+.podcast {
+  width: 100%; /* prend toute la largeur disponible */
+  max-width: none !important; /* annule toute limite */
+  height: 500px; /* ajuste la hauteur selon ton besoin */
+  border: none;
+  border-radius: 0;
+  display: block;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
   .podcast-header-title {
     font-size: 30px;
-    text-align: center;
   }
+
   .podcast-header-subtitle {
     font-size: 16px;
-    line-height: normal;
-    text-align: center;
   }
 
   .podcast {
-    width: 100px;
-  }
-  .podcast-main-div {
-    text-align: center;
+    height: 300px;
   }
 }

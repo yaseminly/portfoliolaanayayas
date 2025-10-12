@@ -382,9 +382,7 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  
-  number: "0694373712",
-  email_address: "yasminnln20030@gmail.com"
+  email_address: "yasminnln2003@gmail.com"
 };
 
 // Twitter Section

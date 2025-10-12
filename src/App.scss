@@ -1,0 +1,69 @@
+@import "./globalColor";
+
+.App {
+  text-align: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: $appHeaderBG;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.625rem + 2vmin);
+  color: $textColorDark;
+}
+
+.App-link {
+  color: $appLink;
+}
+
+.subTitle {
+  color: $subTitle;
+}
+body {
+  background: linear-gradient(160deg, #d6b4bd 0%, #c7abda 40%, #c8f2dc 100%);
+  color: #9885b1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Pour les titres */
+h1, h2, h3, h4 {
+  color: #8b5fbf;
+  font-weight: 600;
+}
+
+/* Pour les boutons */
+button, .btn {
+  background-color: #6c4477;
+  color: #3a2e4b;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #b892d9;
+  color: white;
+}
+
+/* Les cartes (ex: experience, projets) */
+.card {
+  background-color: #fff8f0;
+  box-shadow: 0 4px 8px rgba(173, 136, 198, 0.2);
+  border-radius: 20px;
+}
+
+/* Les sections principales */
+section {
+  padding: 60px 0;
+}
+

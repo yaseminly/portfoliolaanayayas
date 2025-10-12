@@ -160,7 +160,7 @@ const workExperiences = {
         {
       role: "Stagiaire",
       company: "Essanet",
-      companylogo: require("./assets/images/ESS.PNG"),
+      companylogo: require("./assets/images/essan.png"),
       date: "Juillet 2023",
       desc: " J'ai eu l'opportunité de travailler sur une solution logicielle développée par mon superviseur, ce qui m'a permis d'approfondir ma compréhension de l'architecture logicielle, du débogage et de l'analyse fonctionnelle."
     },
@@ -197,7 +197,7 @@ const bigProjects = {
   
   projects: [
     {
-      image: require("./assets/images/medicare.JPG"),
+      image: require("./assets/images/medicare.png"),
       projectName: "Medicare",
       projectDesc: "développement un assistant médical intelligent en reactJs et Spring Boot, doté d’un chatbot conversationnel, afin d’accompagner les  les patients dans la gestion des consultations, la prise de rendez-vous et le suivi médical et de l’accès à l’information.",
       footerLink: [
@@ -206,7 +206,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/Captureinterf.JPG"),
+      image: require("./assets/images/jesaa.png"),
       projectName: "Assistant-JESA",
       projectDesc: "Développement d’un assistant intelligent basé sur un modèle de langage (LLM) destiné à l’exploitation de la base documentaire interne de JESA, hébergée sur SharePoint.",
       footerLink: [
@@ -215,7 +215,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/travello.JPG"),
+      image: require("./assets/images/travel.png"),
       projectName: "Travello",
       projectDesc: " Développement d’un site web en Python dédié à la réservation de vols de voyage à l’aide du framework Django. L’application permet aux utilisateurs de rechercher des vols, consulter les détails prix, destination, horaires, effectuer des réservations en ligne et gérer leurs réservations.",
       footerLink: [
@@ -232,7 +232,7 @@ const bigProjects = {
       ]
     },
      {
-      image: require("./assets/images/ecos.JPG"),
+      image: require("./assets/images/ecosm.png"),
       projectName: "eCosmetics",
       projectDesc: "Développement d’une application e-commerce en ASP.NET MVC dédiée à la vente de produits cosmétiques. ",
       footerLink: [
@@ -255,7 +255,7 @@ const achievementSection = {
     {
       title: "Virtual Networks in Azure",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
    
       footerLink: [
         {
@@ -268,7 +268,7 @@ const achievementSection = {
     {
       title: "Introduction to Java and Object-Oriented Programming",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -280,7 +280,7 @@ const achievementSection = {
     {
       title: "Programming for Everybody (Getting Started with Python)",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -292,7 +292,7 @@ const achievementSection = {
     {
       title: "Introduction à la programmation orientée objet (en C++)",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -304,7 +304,7 @@ const achievementSection = {
     {
       title: "Modern Data Warehouse Analytics in Microsoft Azure",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -317,7 +317,7 @@ const achievementSection = {
     {
       title: "Software Engineering: Software Design and Project Management",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -330,7 +330,7 @@ const achievementSection = {
     {
       title: "React Basics",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {
@@ -343,7 +343,7 @@ const achievementSection = {
     {
       title: "The Unix Workbench",
       
-      image: require("./assets/images/coursera.JPG"),
+      image: require("./assets/images/courser.png"),
       
       footerLink: [
         {name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/3FQZWLRQLKC5/"},

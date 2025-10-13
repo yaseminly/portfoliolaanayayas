@@ -21,7 +21,7 @@ const illustration = {
 
 const greeting = {
   username: "Yasmine Laanaya",
-  title: "Yasmine — Ravie de vous accueillir sur mon espace professionnel",
+  title: "Ravie de vous accueillir sur mon espace professionnel",
   subTitle: emoji(
     "Étudiante ingénieure MIAGE | Développeuse Full Stack | Passionnée d’IA de Data et d’innovation"
   ),
@@ -43,15 +43,18 @@ const socialMediaLinks = {
 };
 
 // Skills Section
-
 const skillsSection = {
   title: "What I do",
   subTitle: "I don't just code features, I code intelligence.",
   skills: [
-    emoji(
-      "⚡Ingénieure MIAGE - Expert en Développement Full-Stack & Intégration IA/ML.🎯Conception et développement d'applications web/mobiles full-stack/🧠Intégration de modèles d'IA/ML (Machine Learning, LLM, Computer Vision)/⚙️Architecture microservices et APIs REST/GraphQL/☁️Déploiement cloud et mise en œuvre de pipelines CI/CD/🔧Application des principes SOLID, design patterns et méthodes agiles"
-    
-    )
+    emoji(`
+Ingénieure MIAGE - Spécialisée en Développement Full-Stack & Intégration IA/ML.
+- Conception et développement d'applications web/mobiles full-stack.
+- Intégration de modèles d'IA/ML (Machine Learning, LLM, Computer Vision).
+- Architecture microservices et APIs REST/GraphQL.
+- Déploiement cloud et mise en œuvre de pipelines CI/CD.
+- Application des principes SOLID, design patterns et méthodes agiles.
+    `)
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -144,6 +147,14 @@ const educationInfo = {
       
       
     },
+    {
+      schoolName: "LES CRETES",
+      logo: require("./assets/images/cretes.png"),
+      subHeader: "Baccalauréat en science physique et chimie biof",
+      duration: "2019-2020",
+      
+      
+    },
     
   ]
 };
@@ -169,7 +180,7 @@ const workExperiences = {
       company: "Orange Maroc",
       companylogo: require("./assets/images/orange.png"),
       date: "Juillet 2024",
-      desc: "Conception de tableaux de bord Power BI pour l’analyse des indicateurs de performance (KPI) et le pilotage des performances techniques B2B",
+      desc: "Conception de tableaux de bord Power BI pour l’analyse des indicateurs de performance (KPI) et le pilotage des performances techniques B2B.",
     },
     {
       role: "Stagiaire",
@@ -199,7 +210,7 @@ const bigProjects = {
     {
       image: require("./assets/images/medicare.png"),
       projectName: "Medicare",
-      projectDesc: "développement un assistant médical intelligent en reactJs et Spring Boot, doté d’un chatbot conversationnel, afin d’accompagner les  les patients dans la gestion des consultations, la prise de rendez-vous et le suivi médical et de l’accès à l’information.",
+      projectDesc: "développement un assistant médical intelligent en reactJs et Spring Boot, doté d’un chatbot conversationnel, afin d’accompagner les patients dans la gestion des consultations, la prise de rendez-vous et le suivi médical et de l’accès à l’information.",
       footerLink: [
         
         //  you can add extra buttons here.
@@ -208,7 +219,7 @@ const bigProjects = {
     {
       image: require("./assets/images/jesaa.png"),
       projectName: "Assistant-JESA",
-      projectDesc: "Développement d’un assistant intelligent basé sur un modèle de langage (LLM) destiné à l’exploitation de la base documentaire interne de JESA, hébergée sur SharePoint.",
+      projectDesc: "Développement d’un assistant intelligent basé sur un LLM pour exploiter la base documentaire interne de JESA sur SharePoint, facilitant la recherche d’informations via le langage naturel grâce à Python, LangChain, Chainlit et aux techniques de NLP",
       footerLink: [
         
         //  you can add extra buttons here.
@@ -231,10 +242,18 @@ const bigProjects = {
         
       ]
     },
+    {
+      image: require("./assets/images/backup.png"),
+      projectName: "DataSafe - gestion des sauvegardes automatiques",
+      projectDesc: "Ce projet consiste à créer un script shell automatisé de sauvegarde permettant de sélectionner les fichiers ou dossiers à sauvegarder, de planifier les sauvegardes automatiquement, de compresser les données pour économiser l’espace, et de générer des journaux ainsi que des notifications sur l’état des sauvegardes.",
+      footerLink: [
+        
+      ]
+    },
      {
       image: require("./assets/images/ecosm.png"),
       projectName: "eCosmetics",
-      projectDesc: "Développement d’une application e-commerce en ASP.NET MVC dédiée à la vente de produits cosmétiques. ",
+      projectDesc: "Développement d’une application e-commerce en ASP.NET MVC dédiée à la vente de produits cosmétiques, intégrant la gestion des utilisateurs, du catalogue et du panier d’achat, avec une interface moderne, responsive et orientée expérience utilisateur. ",
       footerLink: [
         
       ]
@@ -379,9 +398,21 @@ const resumeSection = {
   // Please Provide with Your Podcast embeded Link
   display: true // Set false to hide this section, defaults to true
 };
+// Section langues (nouvelle)
+const languages = {
+  display: true,
+  title: "Languages",
+  list: [
+    {  name: "Français", level: "Courant - Professionnel " },
+    {  name: "Anglais", level: "Courant -Professionnel" },
+    {  name: "Arabe", level: "Natif" },
+    {  name: "Turc", level: "Conversationnel" }
+  ]
+};
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
+  subtitle: "Open to any internship or collaboration opportunity.",
   email_address: "yasminnln2003@gmail.com"
 };
 
@@ -407,7 +438,7 @@ export {
   bigProjects,
   achievementSection,
   
- 
+  languages,
   podcastSection,
   contactInfo,
   twitterDetails,

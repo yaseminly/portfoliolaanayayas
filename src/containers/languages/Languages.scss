@@ -1,0 +1,74 @@
+.languages-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(180deg, #f5f3ff, #e9f3ff);
+}
+
+.languages-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #3f0743;
+  margin-bottom: 40px;
+}
+
+
+
+
+.language-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.flag {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.language-card p {
+  margin: 0;
+  color: #5b5b5b;
+  font-size: 16px;
+  font-weight: 500;
+}
+.language-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px 20px; /* réduit la taille du fond blanc */
+  min-width: 150px;   /* réduit un peu la largeur minimale */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* espace entre chaque carte */
+.languages-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; /* augmenté de 30px à 40px pour plus de séparation */
+}
+.language-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column; /* pour que les éléments soient empilés */
+  align-items: center;
+  gap: 8px; /* espace entre le drapeau, le nom et le niveau */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.language-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #65236a;
+}
+
+.language-level {
+  font-size: 15px;
+  color: #5dbca6;
+}

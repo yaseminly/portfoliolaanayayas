@@ -29,3 +29,15 @@
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;
 }
+/* Dark theme */
+body.dark-theme .software-skill-inline > i {
+  color: white; /* icônes en blanc */
+}
+
+body.dark-theme .software-skill-inline > i:hover {
+  color: $skillsColor; /* hover couleur reste la même */
+}
+
+body.dark-theme .software-skill-inline > i:hover ~ p {
+  color: $skillsColor; /* texte change aussi au hover */
+}

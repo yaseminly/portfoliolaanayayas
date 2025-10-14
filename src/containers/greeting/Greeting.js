@@ -25,7 +25,7 @@ export default function Greeting() {
               >
                 {" "}
                 {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                <span className="wave-emoji"></span>
               </h1>
               <p
                 className={
@@ -42,7 +42,7 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./CV provisoire.pdf")}
+                    href={require("./Yasmine Laanaya CV.pdf")}
                     download="Resume.pdf"
                     className="download-link-button"
                   >

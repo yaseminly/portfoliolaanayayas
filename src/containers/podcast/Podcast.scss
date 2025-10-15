@@ -1,49 +1,112 @@
+/*
+ * Styles pour l'Intégration d'un Lecteur de Podcast
+ * Utilise des variables SCSS pour les couleurs (importé via @import "../../_globalColor";)
+ */
+
 @import "../../_globalColor";
 
+/* --- Titres et Sous-titres --- */
+
 .podcast-header-title {
-  font-size: 56px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 1rem;
+    font-size: 56px;
+    font-weight: 400;
+    text-align: center; /* Titre centré */
+    margin-bottom: 1rem;
+    color: #333; /* Ajout d'une couleur par défaut si non définie ailleurs */
 }
 
 .podcast-header-subtitle {
-  font-size: 20px;
-  color: $subTitle;
-  text-align: center;
-  margin-bottom: 2rem;
+    font-size: 20px;
+    color: $subTitle; /* Utilisation de la variable SCSS */
+    text-align: center; /* Sous-titre centré */
+    margin-bottom: 2rem;
 }
+
+/* --- Conteneur Principal --- */
 
 .podcast-main-div {
-  width: 100vw; /* prend toute la largeur de la fenêtre */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement (pour la flex-direction column) */
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
+
+/* --- Lecteur de Podcast (Iframe ou Éléments Similaires) --- */
 
 .podcast {
-  width: 100%; /* prend toute la largeur disponible */
-  max-width: none !important; /* annule toute limite */
-  height: 500px; /* ajuste la hauteur selon ton besoin */
-  border: none;
-  border-radius: 0;
-  display: block;
+    width: 100%; /* S'étend sur toute la largeur disponible du parent */
+    /* Ces déclarations forcent l'élément à ignorer les contraintes de max-width éventuelles */
+    max-width: none !important;
+    height: 500px; /* Hauteur par défaut pour les grands écrans */
+    border: none;
+    border-radius: 0;
+    display: block;
 }
 
-/* Responsive design */
+/* --- Adaptation Mobile (Responsive Design) --- */
+
 @media (max-width: 768px) {
-  .podcast-header-title {
-    font-size: 30px;
-  }
+    .podcast-header-title {
+        font-size: 30px; /* Réduction de la taille du titre */
+    }
 
-  .podcast-header-subtitle {
-    font-size: 16px;
-  }
+    .podcast-header-subtitle {
+        font-size: 16px; /* Réduction de la taille du sous-titre */
+    }
 
-  .podcast {
-    height: 300px;
-  }
+    .podcast {
+        height: 300px; /* Réduction de la hauteur du lecteur sur mobile */
+    }
 }
+/*
+ * Styles pour l'Intégration d'un Lecteur de Podcast
+ * Styles mis à jour pour un lecteur encadré et centré qui ne prend pas trop d'espace.
+ */
+
+@import "../../_globalColor";
+
+/* --- Conteneur Principal --- */
+
+.podcast-main-div {
+    /* La largeur prendra au maximum 100% du parent, mais nous limiterons le parent */
+    width: 100%; 
+    display: flex;
+    justify-content: center; /* Centre l'iframe horizontalement */
+    align-items: center; 
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Lecteur de Podcast (Iframe) --- */
+
+.podcast {
+    /* Limite la largeur de l'iframe à 800px max (ajustez selon votre besoin) */
+    max-width: 800px;
+    /* L'iframe prendra toute la place disponible jusqu'à sa max-width */
+    width: 90%; 
+    height: 500px; /* Hauteur par défaut conservée */
+    border: 1px solid #ddd; /* Ajout d'une bordure discrète */
+    border-radius: 12px; /* Coins arrondis pour un aspect moderne */
+    display: block;
+    /* Assure que l'élément reste centré dans le .podcast-main-div (si ce dernier a une max-width) */
+    margin: 0 auto; 
+}
+
+/* --- Adaptation Mobile (Responsive Design) --- */
+
+@media (max-width: 768px) {
+    /* ... (Gardez les styles de titre précédents) ... */
+
+    .podcast {
+        /* L'iframe prend 95% de la largeur sur mobile pour ne pas être collé aux bords */
+        width: 95%; 
+        max-width: none; /* Retire la limite pour les petits écrans */
+        height: 300px;
+    }
+}
+
+/* ... (Conservez les styles de titre précédents non modifiés ici) ... */

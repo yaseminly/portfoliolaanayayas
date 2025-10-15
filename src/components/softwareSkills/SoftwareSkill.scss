@@ -1,43 +1,81 @@
 @import "../../_globalColor";
 
+/* --- Variables de Couleur Améliorée pour la Visibilité --- */
+$visible-light-color: #e6e6e6; /* Gris moyen/sombre (très lisible, garde l'élégance) */
+$pale-dark-color: #e0e0e0;  /* Gris très clair pour le mode sombre (déjà clair) */
+
+/* Conteneur principal des icônes */
 .dev-icons {
-  padding-left: 0;
-  list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+    font-size: 3.5rem; 
+    margin: 30px 0; 
+    text-align: center;
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    list-style: none;
+    padding-left: 0;
 }
 
+/* Élément de compétence (Icône + Texte) */
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100px; 
+    text-align: center;
+    transition: transform 0.3s ease; 
 }
 
+/* Effet de survol sur l'élément complet */
+.software-skill-inline:hover {
+    transform: translateY(-5px); 
+}
+
+/* Style de l'icône */
 .software-skill-inline > i {
-  color: $subTitle;
+    color: $visible-light-color; /* CLARTÉ AMÉLIORÉE EN MODE CLAIR */
+    transition: color 0.3s ease; 
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
-}
+/* Style du texte (Nom de la compétence) */
 .software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
-}
-/* Dark theme */
-body.dark-theme .software-skill-inline > i {
-  color: white; /* icônes en blanc */
+    color: $visible-light-color; /* CLARTÉ AMÉLIORÉE EN MODE CLAIR */
+    font-size: 14px; 
+    font-weight: 500;
+    margin-top: 5px;
+    transition: color 0.3s ease;
 }
 
-body.dark-theme .software-skill-inline > i:hover {
-  color: $skillsColor; /* hover couleur reste la même */
+/* Effets de survol (Hover) sur l'icône ET le texte */
+.software-skill-inline:hover > i,
+.software-skill-inline:hover > p {
+    color: $skillsColor; 
 }
 
-body.dark-theme .software-skill-inline > i:hover ~ p {
-  color: $skillsColor; /* texte change aussi au hover */
+/* --- Thème Sombre (Dark Mode) --- */
+
+body.dark-mode .software-skill-inline > i,
+body.dark-mode .software-skill-inline > p {
+    color: $pale-dark-color; /* Utilise la couleur très claire pour le mode sombre */
+}
+
+/* Effets de survol en Dark Mode */
+body.dark-mode .software-skill-inline:hover > i,
+body.dark-mode .software-skill-inline:hover > p {
+    color: $skillsColor; 
+}
+
+/* --- Media Query --- */
+@media (max-width: 600px) {
+    .dev-icons {
+        font-size: 3rem;
+        gap: 20px 15px;
+    }
+    .software-skill-inline {
+        width: 80px;
+    }
+    .software-skill-inline > p {
+        font-size: 12px;
+    }
 }

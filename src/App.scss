@@ -26,24 +26,24 @@
 }
 
 .subTitle {
-  color: $subTitle;
+  color: floralwhite;
 }
 body {
-  background: linear-gradient(160deg, #d6b4bd 0%, #c7abda 40%, #c8f2dc 100%);
-  color: #9885b1;
+  background: linear-gradient(160deg, #5e464c 0%, #cba4aa 40%, #c6afbe 100%);
+  color: #fbfbfb;
   transition: all 0.3s ease-in-out;
 }
 
 /* Pour les titres */
 h1, h2, h3, h4 {
-  color: #8b5fbf;
+  color: #4e3539;
   font-weight: 600;
 }
 
 /* Pour les boutons */
 button, .btn {
-  background-color: #6c4477;
-  color: #3a2e4b;
+  background-color: #74567c;
+  color: #f0eaf7;
   border: none;
   border-radius: 20px;
   padding: 10px 25px;
@@ -58,7 +58,7 @@ button:hover, .btn:hover {
 /* Les cartes (ex: experience, projets) */
 .card {
   background-color: #fff8f0;
-  box-shadow: 0 4px 8px rgba(173, 136, 198, 0.2);
+  box-shadow: 0 4px 8px rgba(144, 138, 148, 0.2);
   border-radius: 20px;
 }
 

@@ -21,7 +21,7 @@ const illustration = {
 
 const greeting = {
   username: "Yasmine Laanaya",
-  title: "Ravie de vous accueillir sur mon espace professionnel",
+  title: "Yasmine Laanaya - Software Engineer",
   subTitle: emoji(
     "Étudiante ingénieure MIAGE | Développeuse Full Stack | Passionnée d’IA de Data et d’innovation"
   ),

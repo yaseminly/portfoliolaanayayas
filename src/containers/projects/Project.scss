@@ -1,32 +1,98 @@
-.project-title {
-  font-size: 52px;
-  font-weight: 400;
-  line-height: normal;
+@import "../../_globalColor";
+
+/* ===== SECTION PRINCIPALE ===== */
+.main {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
 }
 
+/* ===== TITRE ===== */
+.project-title {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.project-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.3;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ===== CARTES ===== */
+.repo-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
+
+/* ===== BOUTON ===== */
+.project-button {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== IMAGES ===== */
 .startup-project-text img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
 }
 
-.repo-cards-div-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem 1rem;
+.startup-project-text img:hover {
+  transform: scale(1.03);
 }
 
-/* Media Query */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1380px) {
   .project-title {
     font-size: 40px;
   }
 }
+
 @media (max-width: 768px) {
+  .main {
+    padding: 4rem 1rem;
+  }
+
   .project-title {
-    font-size: 30px;
+    font-size: 32px;
     text-align: center;
   }
+
   .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
   }
 }

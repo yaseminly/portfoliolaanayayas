@@ -1,87 +1,123 @@
+/*
+ * Section de Contact - Style Amélioré
+ */
+
 @import "../../_globalColor";
 
-.contact-div-main {
-  display: flex;
-}
+/* Variables d'espacement pour la cohérence */
+$spacing-xl: 4rem;
+$spacing-lg: 1.5rem;
+$spacing-md: 1rem;
+$spacing-sm: 0.5rem;
 
-.dark-mode a {
-  color: $textColorDark;
+.contact-div-main {
+    display: flex;
+    justify-content: space-between; /* Mieux pour l'espacement */
+    align-items: center; /* Aligner verticalement le contenu */
+    gap: $spacing-xl; /* Espace entre les deux colonnes */
+    padding: $spacing-lg 0;
 }
 
 .contact-div-main > * {
-  flex: 1;
+    flex: 1; /* Distribue l'espace égalitairement */
+}
+
+/* Corrections de classe pour le Dark Mode */
+.dark-mode-text a, .dark-mode-text { /* Nouvelle classe de texte Dark Mode */
+    color: $textColorDark !important;
 }
 
 .contact-title {
-  font-size: 65px;
-  font-weight: 400;
-}
-
-.contact-detail,
-.contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
-  text-decoration: none;
-}
-
-.contact-detail:hover,
-.contact-detail-email:hover {
-  color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
+    font-size: 60px; /* Légèrement réduit pour un meilleur équilibre */
+    font-weight: 700; /* Plus de poids pour le titre */
+    margin-bottom: $spacing-md;
 }
 
 .contact-subtitle {
-  text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: $spacing-lg;
+    text-transform: none; /* Moins agressif que uppercase */
+    color: $subTitle;
 }
 
+/* Conteneur de Texte */
 .contact-text-div {
-  margin-top: 1.5rem;
+    margin-top: $spacing-lg;
+    display: flex;
+    flex-direction: column; /* Empile les éléments */
+    gap: $spacing-sm; /* Espacement subtil entre les détails */
+}
+
+/* Espacement entre les liens */
+.spacer {
+    height: $spacing-md; /* Remplace les <br> pour un espacement précis */
+}
+
+/* Style des détails de contact (tél/email) */
+.contact-detail {
+    font-size: 28px; /* Taille plus raisonnable */
+    font-weight: 500;
+    color: $subTitle;
+    text-decoration: none;
+    display: block; /* Prend toute la ligne */
+}
+
+.contact-detail:hover {
+ 
+    text-shadow: none; /* Retrait de l'ombre pour un look plus plat et moderne */
+    transition: color 0.3s ease;
 }
 
 .contact-margin-top {
-  margin-top: 4rem;
+    margin-top: $spacing-xl;
+}
+
+.contact-image-div {
+    display: flex;
+    justify-content: flex-end; /* Aligner l'image à droite */
+    align-items: center;
 }
 
 .contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0; /* Réinitialiser les marges négatives pour un placement plus propre */
 }
 
-/* Media Query */
+/* --- Media Query --- */
 @media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
+    .contact-div-main {
+        flex-direction: column; /* Les éléments s'empilent */
+        text-align: center;
+        gap: $spacing-lg;
+    }
 
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
+    .contact-header {
+        order: 2; /* Place le texte en bas sur mobile (optionnel, mais courant) */
+    }
 
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
+    .contact-image-div {
+        order: 1; /* Place l'image en haut sur mobile */
+        display: none; /* Masquer l'image sur les très petits écrans si Lottie est trop lourd */
+        max-width: 300px; /* Limiter la taille de l'illustration */
+        margin: 0 auto;
+    }
 
-  .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
+    .contact-title {
+        font-size: 40px;
+    }
 
-  .contact-detail,
-  .contact-detail-email {
-    font-size: 20px;
-  }
+    /* Le second .contact-title dans votre code initial était une erreur, corrigé ici */
 
-  .contact-image-div {
-    display: none;
-  }
+    .contact-subtitle {
+        font-size: 16px;
+    }
+
+    .contact-detail {
+        font-size: 20px;
+    }
+    
+    .contact-text-div {
+        align-items: center; /* Centre les liens dans la colonne sur mobile */
+    }
 }

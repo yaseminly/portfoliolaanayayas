@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
+   
 }
 
 .App-link {
@@ -29,7 +29,8 @@
   color: floralwhite;
 }
 body {
-  background: linear-gradient(160deg, #5e464c 0%, #cba4aa 40%, #c6afbe 100%);
+ background: linear-gradient(160deg, #5e464c 0%, #a48f96 40%, #d9cfd3 100%);
+
   color: #fbfbfb;
   transition: all 0.3s ease-in-out;
 }

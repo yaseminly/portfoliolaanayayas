@@ -1,81 +1,108 @@
 @import "../../_globalColor";
+$visible-light-color: #ebeaf1;
+$pale-dark-color: #e0e0e0;
+$skillsColor: #7e3663;
 
-/* --- Variables de Couleur Améliorée pour la Visibilité --- */
-$visible-light-color: #e6e6e6; /* Gris moyen/sombre (très lisible, garde l'élégance) */
-$pale-dark-color: #e0e0e0;  /* Gris très clair pour le mode sombre (déjà clair) */
 
-/* Conteneur principal des icônes */
+// ====== CONTAINER GLOBAL ======
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 80px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+// ====== CHAQUE CARTE (CATÉGORIE) ======
+.skills-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.skills-card:hover {
+  transform: translateY(-6px);
+  border-color: $skillsColor;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+// ====== TITRE DE LA CATÉGORIE ======
+.skills-category {
+  font-size: 20px;
+  font-weight: 600;
+  color: $skillsColor;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// ====== LISTE DES ICONES ======
 .dev-icons {
-    font-size: 3.5rem; 
-    margin: 30px 0; 
-    text-align: center;
-    display: flex; 
-    justify-content: center;
-    flex-wrap: wrap; 
-    gap: 30px; 
-    list-style: none;
-    padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Élément de compétence (Icône + Texte) */
+// ====== CHAQUE SKILL ======
 .software-skill-inline {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 100px; 
-    text-align: center;
-    transition: transform 0.3s ease; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-/* Effet de survol sur l'élément complet */
 .software-skill-inline:hover {
-    transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
-/* Style de l'icône */
-.software-skill-inline > i {
-    color: $visible-light-color; /* CLARTÉ AMÉLIORÉE EN MODE CLAIR */
-    transition: color 0.3s ease; 
+.software-skill-inline i {
+  font-size: 35px;
+  color: $visible-light-color;
+  transition: color 0.3s ease;
 }
 
-/* Style du texte (Nom de la compétence) */
-.software-skill-inline > p {
-    color: $visible-light-color; /* CLARTÉ AMÉLIORÉE EN MODE CLAIR */
-    font-size: 14px; 
-    font-weight: 500;
-    margin-top: 5px;
-    transition: color 0.3s ease;
+.software-skill-inline p {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 5px;
+  color: $visible-light-color;
+  transition: color 0.3s ease;
 }
 
-/* Effets de survol (Hover) sur l'icône ET le texte */
-.software-skill-inline:hover > i,
-.software-skill-inline:hover > p {
-    color: $skillsColor; 
+.software-skill-inline:hover i,
+.software-skill-inline:hover p {
+  color: $skillsColor;
 }
 
-/* --- Thème Sombre (Dark Mode) --- */
-
-body.dark-mode .software-skill-inline > i,
-body.dark-mode .software-skill-inline > p {
-    color: $pale-dark-color; /* Utilise la couleur très claire pour le mode sombre */
+// ====== MODE SOMBRE ======
+body.dark-mode .skills-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Effets de survol en Dark Mode */
-body.dark-mode .software-skill-inline:hover > i,
-body.dark-mode .software-skill-inline:hover > p {
-    color: $skillsColor; 
+body.dark-mode .software-skill-inline i,
+body.dark-mode .software-skill-inline p {
+  color: $pale-dark-color;
 }
 
-/* --- Media Query --- */
-@media (max-width: 600px) {
-    .dev-icons {
-        font-size: 3rem;
-        gap: 20px 15px;
-    }
-    .software-skill-inline {
-        width: 80px;
-    }
-    .software-skill-inline > p {
-        font-size: 12px;
-    }
+// ====== RESPONSIVE ======
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .software-skill-inline {
+    width: 80px;
+  }
 }

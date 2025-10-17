@@ -35,7 +35,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/yaseminly",
   linkedin: "https://www.linkedin.com/in/yasmine-laanaya-81819431b/",
-  gmail: "yasminnln2003@gmail.com",
+ gmail: "mailto:yasminnln2003@gmail.com",
 
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
@@ -48,7 +48,8 @@ const skillsSection = {
   subTitle: "I don't just code features, I code intelligence.",
   skills: [
     emoji(`
-Ingénieure MIAGE - Spécialisée en Développement Full-Stack & Intégration IA/ML.
+Ingénieure MIAGE
+- Spécialisée en Développement Full-Stack & Intégration IA/ML.
 - Conception et développement d'applications web/mobiles full-stack.
 - Intégration de modèles d'IA/ML (Machine Learning, LLM, Computer Vision).
 - Architecture microservices et APIs REST/GraphQL.
@@ -59,78 +60,89 @@ Ingénieure MIAGE - Spécialisée en Développement Full-Stack & Intégration IA
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
+softwareSkills: [
+  {
+    category: "Backend",
+    skills: [
+      { skillName: "Java 17", fontAwesomeClassname: "fab fa-java" },
+      { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
+      { skillName: "Jakarta EE", fontAwesomeClassname: "fas fa-coffee" },
+      { skillName: "DotNet", fontAwesomeClassname: "fas fa-code" },
+      { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+      { skillName: "Django", fontAwesomeClassname: "fab fa-python" },
+      { skillName: "C#/C++", fontAwesomeClassname: "fas fa-code" },
+      { skillName: "ERP Development", fontAwesomeClassname: "fas fa-network-wired" },
+    ],
+  },
+  {
+    category: "Frontend",
+    skills: [
+      { skillName: "HTML5", fontAwesomeClassname: "fab fa-html5" },
+      { skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt" },
+      { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
+      { skillName: "TypeScript", fontAwesomeClassname: "fab fa-js-square" },
+      { skillName: "ReactJS", fontAwesomeClassname: "fab fa-react" },
+      { skillName: "Angular", fontAwesomeClassname: "fab fa-angular" },
+      { skillName: "Vite", fontAwesomeClassname: "fas fa-bolt" },
+      { skillName: "Sass", fontAwesomeClassname: "fab fa-sass" },
+      { skillName: "npm", fontAwesomeClassname: "fab fa-npm" },
+    ],
+  },
+  
+   
+  {
+    category: "Data & AI",
+    skills: [
+      { skillName: "Machine Learning", fontAwesomeClassname: "fas fa-robot" },
+      { skillName: "Deep Learning", fontAwesomeClassname: "fas fa-brain" },
+      { skillName: "TensorFlow", fontAwesomeClassname: "fas fa-cube" },
+    
+      { skillName: "NLP", fontAwesomeClassname: "fas fa-comment-dots" },
+      { skillName: "Classification", fontAwesomeClassname: "fas fa-layer-group" },
+      { skillName: "Regression", fontAwesomeClassname: "fas fa-chart-line" },
+      { skillName: "LLM", fontAwesomeClassname: "fas fa-brain" },
+      { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
+      
+    ],
+  },
+  
+  {
+    category: "Databases",
+    skills: [
+      { skillName: "SQL", fontAwesomeClassname: "fas fa-database" },
+      { skillName: "MySQL", fontAwesomeClassname: "fas fa-database" },
+      { skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+      { skillName: "SQLite", fontAwesomeClassname: "fas fa-database" },
+      { skillName: "MongoDB", fontAwesomeClassname: "fas fa-leaf" },
+    ],
+  },
+  
+  {
+    category: "Cloud & DevOps",
+    skills: [
+      { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
+      { skillName: "Microsoft Azure", fontAwesomeClassname: "fas fa-cloud" },
+      { skillName: "Firebase", fontAwesomeClassname: "fas fa-fire" },
+      { skillName: "Git", fontAwesomeClassname: "fab fa-git-alt" },
 
-  softwareSkills: [
-    {
-      skillName: "Java 17",
-      fontAwesomeClassname: "fab fa-java"
-    },
-    {
-      skillName: "llm",
-      fontAwesomeClassname: "fas fa-brain"
-    },
-    {
-      skillName: "machine learning",
-      fontAwesomeClassname: "fas fa-robot"
-    },
-    {
-      skillName: "Power BI",
-      fontAwesomeClassname: "fas fa-chart-bar"
-    },
-    {
-      skillName: "DotNet",
-      fontAwesomeClassname: "fas fa-code"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Django",
-  fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "Jakatra EE",
-      fontAwesomeClassname: "fas fa-coffee"
-    },
-    {
-  skillName: "Spring Boot",
-  fontAwesomeClassname: "fas fa-leaf"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "Microsoft Azure",
-      fontAwesomeClassname: "fas fa-cloud"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "c#",
-      fontAwesomeClassname: "fas fa-code"
-    },
-    {
-      skillName: "UML / MERISE",
-      fontAwesomeClassname: "fas fa-project-diagram"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
+    ],
+  },
+  {
+    category: "Mobile Development",
+    skills: [
+      { skillName: "React Native", fontAwesomeClassname: "fab fa-react" },
+      { skillName: "Flutter", fontAwesomeClassname: "fas fa-mobile-alt" },
+    ],
+  },
+  {
+    category: "Modeling & Design",
+    skills: [
+      { skillName: "UML / MERISE", fontAwesomeClassname: "fas fa-project-diagram" },
+      { skillName: "Figma", fontAwesomeClassname: "fab fa-figma" },
+    ],
+  },
+],
 
-  ],
   display: true // Set false to hide this section, defaults to true
 };
 

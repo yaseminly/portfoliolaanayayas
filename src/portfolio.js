@@ -1,459 +1,247 @@
-/* Change this file to get your personal Portfolio */
-
-// To change portfolio colors globally go to the  _globalColor.scss file
+/* ==== YASMINE LAANAYA | Portfolio ==== */
+/* Personnalisez les couleurs globales dans _globalColor.scss */
 
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import splashAnimation from "./assets/lottie/splashAnimation";
 
-// Splash Screen
-
+/* ==================== SPLASH SCREEN ==================== */
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
+  enabled: true,
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 2000
 };
 
-// Summary And Greeting Section
-
-const illustration = {
-  animated: true // Set to false to use static SVG
-};
+/* ==================== GREETING SECTION ==================== */
+const illustration = { animated: true };
 
 const greeting = {
   username: "Yasmine Laanaya",
-  title: "Yasmine Laanaya - Software Engineer",
-  subTitle: emoji(
-    "Étudiante ingénieure MIAGE | Développeuse Full Stack | Passionnée d’IA de Data et d’innovation"
-  ),
+ title: "Yasmine — Software Engineer | AI & Data Innovator",
+subTitle: emoji(
+  "Driven by innovation and data, I design intelligent, data-powered applications that bridge AI, analytics, and software engineering to deliver meaningful solutions."
+),
   resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing",
+  displayGreeting: true
 };
 
-// Social Media Links
-
+/* ==================== SOCIAL MEDIA ==================== */
 const socialMediaLinks = {
   github: "https://github.com/yaseminly",
   linkedin: "https://www.linkedin.com/in/yasmine-laanaya-81819431b/",
- gmail: "mailto:yasminnln2003@gmail.com",
-
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  gmail: "mailto:yasminnln2003@gmail.com",
+  display: true
 };
 
-// Skills Section
+/* ==================== ABOUT ME ==================== */
+const aboutSection = {
+  display: true,
+  title: "À propos de moi",
+  description: `
+Je suis une étudiante ingénieure MIAGE à l’EMSI Casablanca, passionnée par la convergence entre le développement logiciel, la Data et l’intelligence artificielle. 
+Mon approche repose sur la création d’applications intelligentes qui allient technologie, performance et impact humain. 
+Autonome, créative et curieuse, j’aime explorer de nouvelles technologies et relever des défis innovants.`,
+  image: require("./assets/images/moi.jpeg"),
+};
+
+/* ==================== SKILLS SECTION ==================== */
 const skillsSection = {
-  title: "What I do",
-  subTitle: "I don't just code features, I code intelligence.",
+  title: "Ce que je fais",
+  subTitle: "J’allie développement Full Stack et intelligence artificielle pour concevoir des solutions innovantes.",
   skills: [
-    emoji(`
-Ingénieure MIAGE
-- Spécialisée en Développement Full-Stack & Intégration IA/ML.
-- Conception et développement d'applications web/mobiles full-stack.
-- Intégration de modèles d'IA/ML (Machine Learning, LLM, Computer Vision).
-- Architecture microservices et APIs REST/GraphQL.
-- Déploiement cloud et mise en œuvre de pipelines CI/CD.
-- Application des principes SOLID, design patterns et méthodes agiles.
-    `)
+    emoji("💡 Développement Full Stack : ReactJS, Spring Boot, Django, ASP.NET MVC"),
+    emoji("🧠 IA & Machine Learning : Chatbots, NLP, LLMs, classification et prédiction"),
+    emoji("📊 Data Analytics : Power BI, Python, Microsoft Azure"),
+    emoji("☁️ Déploiement Cloud & DevOps : Docker, CI/CD, Firebase, Git"),
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-softwareSkills: [
-  {
-    category: "Backend",
-    skills: [
-      { skillName: "Java 17", fontAwesomeClassname: "fab fa-java" },
-      { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
-      { skillName: "Jakarta EE", fontAwesomeClassname: "fas fa-coffee" },
-      { skillName: "DotNet", fontAwesomeClassname: "fas fa-code" },
-      { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
-      { skillName: "Django", fontAwesomeClassname: "fab fa-python" },
-      { skillName: "C#/C++", fontAwesomeClassname: "fas fa-code" },
-      { skillName: "ERP Development", fontAwesomeClassname: "fas fa-network-wired" },
-    ],
-  },
-  {
-    category: "Frontend",
-    skills: [
-      { skillName: "HTML5", fontAwesomeClassname: "fab fa-html5" },
-      { skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt" },
-      { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
-      { skillName: "TypeScript", fontAwesomeClassname: "fab fa-js-square" },
-      { skillName: "ReactJS", fontAwesomeClassname: "fab fa-react" },
-      { skillName: "Angular", fontAwesomeClassname: "fab fa-angular" },
-      { skillName: "Vite", fontAwesomeClassname: "fas fa-bolt" },
-      { skillName: "Sass", fontAwesomeClassname: "fab fa-sass" },
-      { skillName: "npm", fontAwesomeClassname: "fab fa-npm" },
-    ],
-  },
-  
-   
-  {
-    category: "Data & AI",
-    skills: [
-      { skillName: "Machine Learning", fontAwesomeClassname: "fas fa-robot" },
-      { skillName: "Deep Learning", fontAwesomeClassname: "fas fa-brain" },
-      { skillName: "TensorFlow", fontAwesomeClassname: "fas fa-cube" },
-    
-      { skillName: "NLP", fontAwesomeClassname: "fas fa-comment-dots" },
-      { skillName: "Classification", fontAwesomeClassname: "fas fa-layer-group" },
-      { skillName: "Regression", fontAwesomeClassname: "fas fa-chart-line" },
-      { skillName: "LLM", fontAwesomeClassname: "fas fa-brain" },
-      { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
-      
-    ],
-  },
-  
-  {
-    category: "Databases",
-    skills: [
-      { skillName: "SQL", fontAwesomeClassname: "fas fa-database" },
-      { skillName: "MySQL", fontAwesomeClassname: "fas fa-database" },
-      { skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database" },
-      { skillName: "SQLite", fontAwesomeClassname: "fas fa-database" },
-      { skillName: "MongoDB", fontAwesomeClassname: "fas fa-leaf" },
-    ],
-  },
-  
-  {
-    category: "Cloud & DevOps",
-    skills: [
-      { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
-      { skillName: "Microsoft Azure", fontAwesomeClassname: "fas fa-cloud" },
-      { skillName: "Firebase", fontAwesomeClassname: "fas fa-fire" },
-      { skillName: "Git", fontAwesomeClassname: "fab fa-git-alt" },
-
-    ],
-  },
-  {
-    category: "Mobile Development",
-    skills: [
-      { skillName: "React Native", fontAwesomeClassname: "fab fa-react" },
-      { skillName: "Flutter", fontAwesomeClassname: "fas fa-mobile-alt" },
-    ],
-  },
-  {
-    category: "Modeling & Design",
-    skills: [
-      { skillName: "UML / MERISE", fontAwesomeClassname: "fas fa-project-diagram" },
-      { skillName: "Figma", fontAwesomeClassname: "fab fa-figma" },
-    ],
-  },
-],
-
-  display: true // Set false to hide this section, defaults to true
+  softwareSkills: [
+    {
+      category: "Backend",
+      skills: [
+        { skillName: "Java / Spring Boot", fontAwesomeClassname: "fab fa-java" },
+        { skillName: "Python / Django", fontAwesomeClassname: "fab fa-python" },
+        { skillName: "C# / .NET", fontAwesomeClassname: "fas fa-code" },
+        { skillName: "SQL / PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+      ],
+    },
+    {
+      category: "Frontend",
+      skills: [
+        { skillName: "ReactJS / Angular", fontAwesomeClassname: "fab fa-react" },
+        { skillName: "HTML / CSS / Sass", fontAwesomeClassname: "fab fa-html5" },
+        { skillName: "TypeScript", fontAwesomeClassname: "fab fa-js-square" },
+      ],
+    },
+    {
+      category: "Data & AI",
+      skills: [
+        { skillName: "Machine Learning", fontAwesomeClassname: "fas fa-robot" },
+        { skillName: "Deep Learning", fontAwesomeClassname: "fas fa-brain" },
+        { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
+      ],
+    },
+    {
+      category: "DevOps & Cloud",
+      skills: [
+        { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
+        { skillName: "Azure", fontAwesomeClassname: "fas fa-cloud" },
+        { skillName: "Firebase", fontAwesomeClassname: "fas fa-fire" },
+        { skillName: "Git", fontAwesomeClassname: "fab fa-git-alt" },
+      ],
+    },
+  ],
+  display: true
 };
 
-// Education Section
-
+/* ==================== EDUCATION ==================== */
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: true,
   schools: [
     {
-      schoolName: "EMSI",
+      schoolName: "École Marocaine des Sciences de l’Ingénieur (EMSI)",
       logo: require("./assets/images/EMSI-.png"),
-      subHeader: "Software Engineer",
+      subHeader: "Ingénierie MIAGE — Informatique, IA et Systèmes d’Information",
       duration: "2021 - 2026",
-      
-      
     },
     {
-      schoolName: "LES CRETES",
+      schoolName: "Lycée Les Crêtes",
       logo: require("./assets/images/cretes.png"),
-      subHeader: "Baccalauréat en science physique et chimie biof",
-      duration: "2019-2020",
-      
-      
+      subHeader: "Baccalauréat en Sciences Physiques et Chimiques",
+      duration: "2019 - 2020",
     },
-    
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-
-
-
-// Work experience section
-
+/* ==================== EXPERIENCE ==================== */
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
-        {
+    {
       role: "Stagiaire",
       company: "Essanet",
       companylogo: require("./assets/images/essan.png"),
       date: "Juillet 2023",
-      desc: " J'ai eu l'opportunité de travailler sur une solution logicielle développée par mon superviseur, ce qui m'a permis d'approfondir ma compréhension de l'architecture logicielle, du débogage et de l'analyse fonctionnelle."
+      desc: "Contribution à une solution logicielle interne : apprentissage approfondi de l’architecture logicielle, du débogage et de l’analyse fonctionnelle."
     },
     {
-      role: "Stagiaire ",
+      role: "Stagiaire BI & Reporting",
       company: "Orange Maroc",
       companylogo: require("./assets/images/orange.png"),
       date: "Juillet 2024",
-      desc: "Conception de tableaux de bord Power BI pour l’analyse des indicateurs de performance (KPI) et le pilotage des performances techniques B2B.",
+      desc: "Conception de tableaux de bord Power BI pour le suivi des performances techniques B2B, analyse des KPI et automatisation des rapports décisionnels."
     },
     {
-      role: "Stagiaire",
-      company: "Jesa",
+      role: "Stagiaire IA & Knowledge Assistant",
+      company: "JESA",
       companylogo: require("./assets/images/jesa1.jpg"),
-      date: "Juillet 2025 – Aout 2025",
-      desc: "Développement d’un assistant intelligent basé sur un LLM pour l’exploitation de la base documentaire SharePoint."
+      date: "Juillet – Août 2025",
+      desc: "Développement d’un assistant intelligent basé sur un LLM pour l’exploitation de la base documentaire SharePoint, intégrant NLP et LangChain."
     },
-
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
-const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Some big projects you have worked on
-
+/* ==================== PROJECTS ==================== */
 const bigProjects = {
-  title: "Projects",
-  
+  title: "Projets phares",
   projects: [
     {
       image: require("./assets/images/medicare.png"),
-      projectName: "Medicare",
-      projectDesc: "développement un assistant médical intelligent en reactJs et Spring Boot, doté d’un chatbot conversationnel, afin d’accompagner les patients dans la gestion des consultations, la prise de rendez-vous et le suivi médical et de l’accès à l’information.",
-      footerLink: [
-        
-        //  you can add extra buttons here.
-      ]
+      projectName: "Medicare — Assistant médical intelligent",
+     projectDesc: "Application Full Stack (ReactJS & Spring Boot) intégrant un chatbot médical intelligent pour accompagner les patients dans la gestion de leurs consultations et rendez-vous. Projet académique réalisé en binôme, mettant en œuvre des technologies modernes d’IA et de développement web.",
+      footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/haitammodli/ADA.git" }],
     },
+    
     {
       image: require("./assets/images/jesaa.png"),
-      projectName: "Assistant-JESA",
-      projectDesc: "Développement d’un assistant intelligent basé sur un LLM pour exploiter la base documentaire interne de JESA sur SharePoint, facilitant la recherche d’informations via le langage naturel grâce à Python, LangChain, Chainlit et aux techniques de NLP",
-      footerLink: [
-        
-        //  you can add extra buttons here.
-      ]
+      projectName: "Assistant JESA",
+      projectDesc: "Développement d’un assistant intelligent basé sur un LLM pour exploiter la base documentaire interne de JESA sur SharePoint, facilitant la recherche d’informations via le langage naturel grâce à Python, LangChain, Chainlit et aux techniques de NLP et RAG.",
+      footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/yaseminly/Assistant-jesa.git" }],
     },
-    {
-      image: require("./assets/images/travel.png"),
-      projectName: "Travello",
-      projectDesc: " Développement d’un site web en Python dédié à la réservation de vols de voyage à l’aide du framework Django. L’application permet aux utilisateurs de rechercher des vols, consulter les détails prix, destination, horaires, effectuer des réservations en ligne et gérer leurs réservations.",
-      footerLink: [
-        
-      ]
-    },
-    
-    {
-      image: require("./assets/images/javafx.jpeg"),
-      projectName: "Géstion des taches personnelles",
-      projectDesc: "Application de bureau développée en JavaFX permettant la création, la modification et le suivi des tâches quotidiennes.",
-      footerLink: [
-        
-      ]
-    },
-    {
-      image: require("./assets/images/backup.png"),
-      projectName: "DataSafe - gestion des sauvegardes automatiques",
-      projectDesc: "Ce projet consiste à créer un script shell automatisé de sauvegarde permettant de sélectionner les fichiers ou dossiers à sauvegarder, de planifier les sauvegardes automatiquement, de compresser les données pour économiser l’espace, et de générer des journaux ainsi que des notifications sur l’état des sauvegardes.",
-      footerLink: [
-        
-      ]
-    },
-     {
-      image: require("./assets/images/ecosm.png"),
-      projectName: "eCosmetics",
-      projectDesc: "Développement d’une application e-commerce en ASP.NET MVC dédiée à la vente de produits cosmétiques, intégrant la gestion des utilisateurs, du catalogue et du panier d’achat, avec une interface moderne, responsive et orientée expérience utilisateur. ",
-      footerLink: [
-        
-      ]
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
+    { image: require("./assets/images/travel.png"), projectName: "Travello", projectDesc: " Développement d’un site web en Python dédié à la réservation de vols de voyage à l’aide du framework Django. L’application permet aux utilisateurs de rechercher des vols, consulter les détails prix, destination, horaires, effectuer des réservations en ligne et gérer leurs réservations.", footerLink: [ ] },
+  
 
-// Achievement Section
-// Include certificates, talks etc
+{ 
+  image: require("./assets/images/javafx.jpeg"), 
+  projectName: "Géstion des taches personnelles", 
+  projectDesc: "Application de bureau développée en JavaFX permettant la création, la modification et le suivi des tâches quotidiennes.", 
+  footerLink: [ ] }, 
+  { image: require("./assets/images/backup.png"), 
+    projectName: "DataSafe - gestion des sauvegardes automatiques",
+     projectDesc: "Ce projet consiste à créer un script shell automatisé de sauvegarde permettant de sélectionner les fichiers ou dossiers à sauvegarder, de planifier les sauvegardes automatiquement, de compresser les données pour économiser l’espace, et de générer des journaux ainsi que des notifications sur l’état des sauvegardes.", 
+     footerLink: [ ] }, 
+     { image: require("./assets/images/ecosm.png"),
+       projectName: "eCosmetics", 
+       projectDesc: "Développement d’une application e-commerce en ASP.NET MVC dédiée à la vente de produits cosmétiques, intégrant la gestion des utilisateurs, du catalogue et du panier d’achat, avec une interface moderne, responsive et orientée expérience utilisateur. ", footerLink: [ ] } 
+      ], display: true // Set false to hide this section, defaults to true 
+      // 
+      };
 
+/* ==================== CERTIFICATIONS ==================== */
 const achievementSection = {
-  title: emoji("Certifications 🏆 "),
-  subtitle:
-    "Certifications, that I have done !",
-
+  title: emoji("Certifications 🏆"),
+  subtitle: "Formations et certifications obtenues via Coursera et Microsoft.",
   achievementsCards: [
-    {
-      title: "Virtual Networks in Azure",
-      
-      image: require("./assets/images/courser.png"),
-   
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.coursera.org/account/accomplishments/verify/LNKCRKXACCCV"
-        },
-        
-      ]
-    },
-    {
-      title: "Introduction to Java and Object-Oriented Programming",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://coursera.org/share/f8ade82f01c0e3b101ed85d9823424c6"
-        }
-      ]
-    },
-    {
-      title: "Programming for Everybody (Getting Started with Python)",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.coursera.org/account/accomplishments/records/QZSED7Z2L3BC"
-        }
-      ]
-    },
-    {
-      title: "Introduction à la programmation orientée objet (en C++)",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.coursera.org/account/accomplishments/records/2VUJL8UC8TJY"
-        }
-      ]
-    },
-    {
-      title: "Modern Data Warehouse Analytics in Microsoft Azure",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://coursera.org/share/91da72dc1ce2d97010c451b59bf711e4"
-        }
-      ]
-    },
-    
-    {
-      title: "Software Engineering: Software Design and Project Management",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.coursera.org/account/accomplishments/records/RXLREMRTE6HY"
-        }
-      ]
-    },
-    
-    {
-      title: "React Basics",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://coursera.org/share/42bd851eb0a16a08dea50ca20c38408c"
-        }
-      ]
-    },
-
-    {
-      title: "The Unix Workbench",
-      
-      image: require("./assets/images/courser.png"),
-      
-      footerLink: [
-        {name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/3FQZWLRQLKC5/"},
-        
-      ]
-    }
-    
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Blogs Section
+   { title: "Virtual Networks in Azure", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://www.coursera.org/account/accomplishments/verify/LNKCRKXACCCV" }, ] }, { title: "Introduction to Java and Object-Oriented Programming", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://coursera.org/share/f8ade82f01c0e3b101ed85d9823424c6" } ] }, { title: "Programming for Everybody (Getting Started with Python)", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/QZSED7Z2L3BC" } ] }, { title: "Introduction à la programmation orientée objet (en C++)", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/2VUJL8UC8TJY" } ] }, { title: "Modern Data Warehouse Analytics in Microsoft Azure", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://coursera.org/share/91da72dc1ce2d97010c451b59bf711e4" } ] }, { title: "Software Engineering: Software Design and Project Management", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/RXLREMRTE6HY" } ] }, { title: "React Basics", image: require("./assets/images/courser.png"), footerLink: [ { name: "Certification", url: "https://coursera.org/share/42bd851eb0a16a08dea50ca20c38408c" } ] }, { title: "The Unix Workbench", image: require("./assets/images/courser.png"), footerLink: [ {name: "Certification", url: "https://www.coursera.org/account/accomplishments/records/3FQZWLRQLKC5/"}, ] } ], display: true // Set false to hide this section, defaults to true 
+   // 
+   };
 
 
-// Talks Sections
-
-
-// Podcast Section
-
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "An empowering conversation on how AI transforms software development and inspires innovation in tech.",
-  link: "https://www.youtube.com/watch?v=Uc3mUIF1bP0",
-  embed: "https://www.youtube.com/embed/Uc3mUIF1bP0"
-
-};
-
-// Resume Section
-const resumeSection = {
-  title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
-};
-// Section langues (nouvelle)
+/* ==================== LANGUAGES ==================== */
 const languages = {
   display: true,
-  title: "Languages",
+  title: "Langues",
   list: [
-    {  name: "Français", level: "Courant - Professionnel " },
-    {  name: "Anglais", level: "Courant -Professionnel" },
-    {  name: "Arabe", level: "Natif" },
-    {  name: "Turc", level: "Conversationnel" }
+    { name: "Français", level: "Courant - Professionnel" },
+    { name: "Anglais", level: "Courant - Professionnel" },
+    { name: "Arabe", level: "Natif" },
+    { name: "Turc", level: "Conversationnel" }
   ]
 };
 
+/* ==================== CONTACT ==================== */
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle: "Open to any internship or collaboration opportunity.",
+  title: emoji("Contact ☎️"),
+  subtitle: "Je suis ouverte à toute opportunité de stage ou collaboration dans les domaines IA, Data ou développement Full Stack.",
   email_address: "yasminnln2003@gmail.com"
 };
 
-// Twitter Section
+/* ==================== FOOTER / JOB STATUS ==================== */
+/* ---------- TEMP FIXES (to avoid build errors) ---------- */
 
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+const openSource = {
+  showGithubProfile: "true", // Affiche ton profil GitHub dans la page Projects
+  display: true // true pour afficher la section Open Source
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const resumeSection = {
+  title: "My Resume",
+  subtitle: "Get a detailed overview of my background and skills",
+  display: false, // tu peux mettre true si tu veux afficher un bouton CV
+  downloadLink: "https://your-resume-link.pdf" // à remplacer par ton lien réel
+};
 
+const twitterDetails = {
+  userName: "YasmineLaanaya", // ton identifiant Twitter (ou X)
+  display: false // tu peux activer plus tard si tu veux
+};
+
+const isHireable = true;
+/* ---------- Export corrected ---------- */
 export {
-  illustration,
   greeting,
   socialMediaLinks,
-  splashScreen,
   skillsSection,
-  educationInfo,
-  
+  aboutSection,
   workExperiences,
-  openSource,
+  educationInfo,
   bigProjects,
   achievementSection,
-  
-  languages,
-  podcastSection,
   contactInfo,
-  twitterDetails,
   isHireable,
-  resumeSection
+  languages,
+  splashScreen,
+  openSource,
+  resumeSection,
+  twitterDetails,
+   illustration
 };

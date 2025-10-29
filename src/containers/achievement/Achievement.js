@@ -1,18 +1,22 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./Achievement.scss";
 import AchievementCard from "../../components/achievementCard/AchievementCard";
-import {achievementSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { achievementSection } from "../../portfolio";
+import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+
 export default function Achievement() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
+
   if (!achievementSection.display) {
     return null;
   }
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="achievements">
         <div className="achievement-main-div">
+          {/* === TITRE ET SOUS-TITRE === */}
           <div className="achievement-header">
             <h1
               className={
@@ -33,22 +37,39 @@ export default function Achievement() {
               {achievementSection.subtitle}
             </p>
           </div>
-          <div className="achievement-cards-div">
-            {achievementSection.achievementsCards.map((card, i) => {
-              return (
-                <AchievementCard
-                  key={i}
-                  isDark={isDark}
-                  cardInfo={{
-                    title: card.title,
-                    description: card.subtitle,
-                    image: card.image,
-                    imageAlt: card.imageAlt,
-                    footer: card.footerLink
-                  }}
-                />
-              );
-            })}
+
+          {/* === AFFICHAGE DES CLUSTERS === */}
+          <div className="achievement-clusters">
+            {achievementSection.clusters &&
+              achievementSection.clusters.map((cluster, i) => (
+                <div key={i} className="achievement-cluster">
+                  <h2
+                    className={
+                      isDark
+                        ? "dark-mode cluster-title"
+                        : "cluster-title"
+                    }
+                  >
+                    {cluster.clusterTitle}
+                  </h2>
+
+                  <div className="achievement-cards-div">
+                    {cluster.achievements.map((card, j) => (
+                      <AchievementCard
+                        key={j}
+                        isDark={isDark}
+                        cardInfo={{
+                          title: card.title,
+                          description: card.description,
+                          image: card.image,
+                          imageAlt: card.imageAlt,
+                          footer: card.footerLink,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>

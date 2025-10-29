@@ -1,8 +1,9 @@
 @import "../../_globalColor";
-$visible-light-color: #d1687d;
-$pale-dark-color: #e0e0e0;
-$skillsColor: #c4d3d1;
 
+/* Palette retravaillée */
+$visible-light-color: #d77fae; // Rose pâle, moderne et lisible
+$pale-dark-color: #ececec;     // Gris très clair pour texte sur fond sombre
+$skillsColor: #7d9a99;         // Vert-bleu doux et élégant pour les titres
 
 .skills-container-main {
   text-align: center;
@@ -16,60 +17,76 @@ $skillsColor: #c4d3d1;
   font-weight: 700;
   color: $skillsColor;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(70, 162, 161, 0.3);
 }
 
 .skills-text-subtitle {
   font-size: 20px;
-  color: black;  
+  color: #5a4a6c;
   margin-bottom: 40px;
+  font-weight: 500;
 }
 
 .skills-details {
   margin-top: 70px;
   max-width: 800px;
   text-align: justify;
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: 16px;
-  color: var(--textColor, #444);
-  background: rgba(247, 247, 247, 0.03);
-  border: 1px solid rgba(200, 200, 200, 0.2);
-  border-radius: 12px;
+  color: #4a3a5a;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(160, 131, 169, 0.3);
+  border-radius: 15px;
   padding: 25px 30px;
- 
+  box-shadow: 0 10px 25px rgba(160, 131, 169, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: auto;
   margin-right: auto;
 }
 
 .skills-details:hover {
-  transform: translateY(-3px);
-}
-
-.dark-mode .skills-details {
- 
-  color: #ddd;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(202, 106, 127, 0.25);
 }
 
 .skills-text {
   font-size: 15px;
-  margin: 8px 0;
+  margin: 10px 0;
   color: $visible-light-color;
+  font-weight: 500;
 }
 
-/* Mode sombre */
+/* --- Mode sombre --- */
+.dark-mode .skills-container-main {
+  background: radial-gradient(circle at 30% 30%, #2b2235 0%, #1c1722 100%);
+}
+
 .dark-mode .skills-heading {
-  color: $skillsColor;
+  color: #ade1e0;
+  text-shadow: 0 0 10px rgba(173, 225, 224, 0.4);
 }
 
-.dark-mode .skills-text-subtitle,
-.dark-mode .skills-text {
+.dark-mode .skills-text-subtitle {
+  color: #ca6a7f;
+}
+
+.dark-mode .skills-details {
+  background: rgba(60, 50, 70, 0.85);
+  border: 1px solid rgba(173, 225, 224, 0.3);
   color: $pale-dark-color;
+  box-shadow: 0 8px 20px rgba(173, 225, 224, 0.1);
 }
 
-/* Responsive */
+.dark-mode .skills-text {
+  color: #ade1e0;
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .skills-container-main {
-    padding: 30px 20px;
+    padding: 40px 25px;
   }
 
   .skills-heading {
@@ -77,6 +94,6 @@ $skillsColor: #c4d3d1;
   }
 
   .skills-text-subtitle {
-    font-size: 19px;
+    font-size: 18px;
   }
 }

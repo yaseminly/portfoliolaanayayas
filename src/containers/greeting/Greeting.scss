@@ -1,181 +1,120 @@
-@import "../../_globalColor";
+/* ==================== GREETING SECTION ==================== */
 
-// --- Section principale ---
-.greet-main {
-  width: 85%;
-  margin: 4rem auto;
-  padding: 3rem 2rem;
-  background: linear-gradient(145deg, $lightBackground1, $lightBackground3);
-  border-radius: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-  backdrop-filter: blur(6px);
-  transition: all 0.4s ease-in-out;
-}
-
-.greet-main:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
-}
-
-// --- Contenu principal (texte gauche, image droite) ---
 .greeting-main {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row; // texte gauche, image droite
-  gap: 4rem;
-  flex-wrap: wrap;
-}
-
-// --- Texte principal ---
-.greeting-text {
-  font-size: 2.8rem;
-  font-weight: 700;
-  
-  color: $textColor !important;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  letter-spacing: 0.6px;
+  padding: 4rem 8%;
+  min-height: 85vh;
+  background: linear-gradient(135deg, #e7e2e2 0%, #bebdbe 100%);
+  color: #222;
   font-family: "Poppins", sans-serif;
 }
 
-.greeting-text.dark-mode {
-  color: $textColorDark !important;
+.dark-mode .greeting-main {
+  background: linear-gradient(135deg, #10141a 0%, #1c2331 100%);
+  color: #f1f1f1;
 }
 
-.greeting-text-p {
+/* === Text Section === */
+.greeting-text-div {
+  max-width: 60%;
+}
+
+.greeting-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #1f3a93;
+}
+
+.dark-mode .greeting-title {
+  color: #7cb9ff;
+}
+
+.greeting-subtitle {
   font-size: 1.2rem;
-  line-height: 1.9;
-  color: $subTitle !important;
-  max-width: 580px;
-  margin-bottom: 2.2rem;
-  font-family: "Inter", sans-serif;
+  line-height: 1.8rem;
+  color: #444;
+  margin-bottom: 1.8rem;
 }
 
-// ✅ version dark sans variable manquante
-.greeting-text-p.dark-mode {
-  color: #b0b0b0 !important; // gris clair lisible sur fond sombre
+.dark-mode .greeting-subtitle {
+  color: #d1d1d1;
 }
 
-// --- Emoji d’accueil ---
-.wave-emoji {
+/* === Resume Button === */
+.greeting-resume-btn {
   display: inline-block;
-  animation: wave 1.8s infinite ease-in-out;
-  transform-origin: 70% 70%;
-  margin-left: 6px;
-  font-size: 1.3em;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.1));
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #007bff 0%, #0056d2 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.25);
 }
 
-// --- Boutons élégants ---
-.button-greeting-div {
+.greeting-resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* === Illustration (image or animation) === */
+.greeting-image-div {
+  flex: 1;
+  text-align: right;
+}
+
+.greeting-image-div img {
+  width: 90%;
+  max-width: 380px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.greeting-image-div img:hover {
+  transform: scale(1.05);
+}
+
+/* === Social Links === */
+.social-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 15px;
   margin-top: 1.5rem;
 }
 
-.download-link-button {
-  text-decoration: none;
+.social-links a {
+  font-size: 1.4rem;
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.button-greeting-div .button {
-  border-radius: 50px;
-  padding: 12px 24px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: all 0.25s ease-in-out;
-}
-
-.button-greeting-div .button:hover {
+.social-links a:hover {
+  background: #007bff;
+  color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
-// --- Image (à droite) ---
-.greeting-image-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-
-.greeting-image-div > img {
-  width: 100%;
-  max-width: 380px;
-   object-fit: cover;
-  height: auto;
-  border-radius: 44px;
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
-}
-
-.greeting-image-div:hover > img {
-  transform: scale(1.06);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
-}
-
-// --- Animation main ---
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  10%, 30%, 50% { transform: rotate(-10deg); }
-  20%, 40% { transform: rotate(12deg); }
-}
-
-// --- Responsivité ---
-@media (max-width: 1024px) {
-  .greet-main {
-    width: 90%;
-    padding: 2rem;
-  }
-
-  .greeting-text {
-    font-size: 2.2rem;
-  }
-
-  .greeting-text-p {
-    font-size: 1.1rem;
-  }
-
-  .greeting-image-div > img {
-    max-width: 320px;
-  }
-}
-
-@media (max-width: 768px) {
+/* === Responsive === */
+@media (max-width: 900px) {
   .greeting-main {
-    flex-direction: column; // empile texte et image
+    flex-direction: column-reverse;
     text-align: center;
-    gap: 2.5rem;
   }
 
-  .greeting-text {
-    font-size: 2rem;
+  .greeting-text-div {
+    max-width: 100%;
   }
 
-  .greeting-text-p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0 auto;
-  }
-
-  .button-greeting-div {
-    justify-content: center;
-  }
-
-  .greeting-image-div > img {
-    width: 70%;
-    max-width: 260px;
-  }
-}
-
-@media (max-width: 360px) {
-  .greet-main {
-    width: 95%;
-    padding: 1rem;
-  }
-
-  .greeting-text {
-    font-size: 1.6rem;
+  .greeting-image-div {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 }

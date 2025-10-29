@@ -1,8 +1,7 @@
 @import "../../_globalColor";
-$visible-light-color: #ebeaf1;
-$pale-dark-color: #e0e0e0;
+$visible-light-color: #ffffff;
+$pale-dark-color: #cccccc;
 $skillsColor: #7e3663;
-
 
 // ====== CONTAINER GLOBAL ======
 .skills-container {
@@ -16,19 +15,19 @@ $skillsColor: #7e3663;
 
 // ====== CHAQUE CARTE (CATÉGORIE) ======
 .skills-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25); // plus opaque
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px); // plus prononcé pour effet clair
 }
 
 .skills-card:hover {
   transform: translateY(-6px);
   border-color: $skillsColor;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 // ====== TITRE DE LA CATÉGORIE ======
@@ -67,15 +66,15 @@ $skillsColor: #7e3663;
 
 .software-skill-inline i {
   font-size: 35px;
-  color: $visible-light-color;
+  color: #3a3a3a; // plus foncé
   transition: color 0.3s ease;
 }
 
 .software-skill-inline p {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 5px;
-  color: $visible-light-color;
+  color: #2d2d2d;
   transition: color 0.3s ease;
 }
 
@@ -86,7 +85,7 @@ $skillsColor: #7e3663;
 
 // ====== MODE SOMBRE ======
 body.dark-mode .skills-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.15);
 }
 

@@ -2,75 +2,54 @@ import React from "react";
 import "./AchievementCard.scss";
 
 export default function AchievementCard({ cardInfo, isDark }) {
-  // Fonction pour ouvrir un lien dans un nouvel onglet
-  function openUrlInNewTab(url, name) {
+  function openUrlInNewTab(url) {
     if (!url) {
-      console.warn(`URL for ${name} not found`);
       return;
     }
-    const win = window.open(url, "_blank");
-    if (win) win.focus();
+    var win = window.open(url, "_blank");
+    win.focus();
   }
 
+  // Extraire la première lettre du titre pour l'icône
+  const iconLetter = cardInfo.title ? cardInfo.title.charAt(0).toUpperCase() : "C";
+
   return (
-    <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
-      {/* === IMAGE === */}
-      <div className="certificate-image-div">
-        <img
-          src={cardInfo.image}
-          alt={cardInfo.imageAlt || "Card Thumbnail"}
-          className="card-image"
-        />
-      </div>
+    <div className={isDark ? "certificate-card dark-mode" : "certificate-card"}>
+      {/* Icône avec la première lettre */}
+      <div className="certificate-icon">{iconLetter}</div>
 
-      {/* === DÉTAILS === */}
+      {/* Détails du certificat */}
       <div className="certificate-detail-div">
-        <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
-          {cardInfo.title}
-        </h5>
-        <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
-          {cardInfo.description}
-        </p>
+        <h5 className="certificate-title">{cardInfo.title}</h5>
+        <p className="certificate-description">{cardInfo.description}</p>
       </div>
 
-      {/* === LIENS (FOOTER) === */}
-      <div className="certificate-card-footer">
-        {cardInfo.footer &&
-          cardInfo.footer.map((v, i) => {
-            // Si c’est un lien de téléchargement :
-            if (v.downloadLink) {
-              return (
-                <a
-                  key={i}
-                  href={v.url}
-                  download // ✅ télécharge le fichier directement
-                  className={
-                    isDark
-                      ? "dark-mode certificate-tag"
-                      : "certificate-tag"
-                  }
-                >
-                  ⬇️ {v.name}
-                </a>
-              );
-            }
-
-            // Sinon, lien classique (ouvre dans un nouvel onglet)
-            return (
-              <span
-                key={i}
-                className={
-                  isDark
-                    ? "dark-mode certificate-tag"
-                    : "certificate-tag"
-                }
-                onClick={() => openUrlInNewTab(v.url, v.name)}
+      {/* Footer avec lien */}
+      {cardInfo.footer && cardInfo.footer.length > 0 && (
+        <div className="certificate-card-footer">
+          {cardInfo.footer.map((link, i) => (
+            <span
+              key={i}
+              onClick={() => openUrlInNewTab(link.url)}
+            >
+              {link.name}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                📄 {v.name}
-              </span>
-            );
-          })}
-      </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

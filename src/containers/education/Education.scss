@@ -1,7 +1,24 @@
+/* ——— Typographie élégante et moderne ——— */
+:root {
+  --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-fallback: system-ui, sans-serif;
+  --text-color: #1f2937; /* Gris anthracite doux, plus élégant que le noir pur */
+  --text-color-light: #4b5563;
+}
+
 .education-heading {
+  font-family: 'Inter', 'Cormorant Garamond', serif; /* mélange moderne + élégance classique */
   font-size: 56px;
   font-weight: 400;
+  color: #392248; 
+  background: linear-gradient(135deg, #8a92b6, #856aa1);
+/* gris anthracite profond, pas froid */
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-align: center;
+  position: relative;
 }
+
 
 .education-section {
   display: flex;
@@ -23,16 +40,30 @@
   padding-top: 20px;
 }
 
+/* Optionnel : si vous avez un texte descriptif */
+.education-text-subtitle {
+  font-family: var(--font-primary);
+  color: var(--text-color-light);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ——— Media Queries (inchangées en taille, juste la typo) ——— */
+
 @media (max-width: 1380px) {
   .education-card-container {
     padding-top: 0px;
   }
   .education-heading {
     font-size: 40px;
+    font-family: var(--font-primary);
+    color: var(--text-color);
   }
   .education-text-subtitle {
     font-size: 18px;
     text-align: center;
+    font-family: var(--font-primary);
+    color: var(--text-color-light);
   }
 }
 
@@ -43,8 +74,12 @@
   .education-heading {
     font-size: 30px;
     text-align: center;
+    font-family: var(--font-primary);
+    color: var(--text-color);
   }
   .education-text-subtitle {
     font-size: 16px;
+    font-family: var(--font-primary);
+    color: var(--text-color-light);
   }
 }

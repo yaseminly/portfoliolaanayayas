@@ -1,37 +1,99 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
-}
-
-.experience-heading {
-  font-size: 56px;
-  font-weight: 400;
+.experience-section {
+  padding: 50px 0;
 }
 
 .experience-container {
-  display: flex;
   width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
-.experience-container > * {
-  flex: 1;
+/* ========== En-tête compact ========== */
+.experience-header {
+  margin-bottom: 30px;
 }
 
-/* Media Query */
+.experience-heading {
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+ color: #392248; 
+  background: linear-gradient(135deg, #8a92b6, #856aa1);
+}
 
+/* ========== Grille compacte ========== */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* ========== Cards minimalistes ========== */
+.experience-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+  }
+}
+
+/* ========== Mode sombre ========== */
+.dark-mode {
+  .experience-heading {
+    color: #8b9cff;
+  }
+  
+  .experience-card {
+    background: #2d3748;
+    border-left-color: #8b9cff;
+    
+    &:hover {
+      box-shadow: 0 4px 16px rgba(139, 156, 255, 0.15);
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
 @media (max-width: 1380px) {
   .experience-heading {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
 @media (max-width: 768px) {
+  .experience-section {
+    padding: 40px 0;
+  }
+  
   .experience-heading {
     font-size: 30px;
     text-align: center;
+  }
+  
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .experience-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-heading {
+    font-size: 26px;
+  }
+  
+  .experience-header {
+    margin-bottom: 20px;
   }
 }

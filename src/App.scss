@@ -1,287 +1,368 @@
-@import "./globalColor";
+/* ==================== IMPORT DE LA PALETTE ==================== */
+@import "./_globalColor.scss";
 
-.App {
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
+/* ==================== RESET & BASE ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: $appHeaderBG;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
-}
-
-.App-link {
-  color: $appLink;
-}
-
-.subTitle {
-  color: #e77e8b;
-  font-weight: 600; /* Plus épais pour meilleure lisibilité */
-  text-shadow: 0 2px 6px rgba(231, 126, 139, 0.25); /* Ombre plus prononcée */
-}
-
-/* ======= BACKGROUND ======= */
 body {
-  background: 
-    radial-gradient(circle at 20% 25%, rgba(184, 228, 220, 0.3) 0%, transparent 60%),
-    radial-gradient(circle at 80% 75%, rgba(231, 126, 139, 0.25) 0%, transparent 50%),
-    radial-gradient(circle at 60% 40%, rgba(138, 157, 184, 0.2) 0%, transparent 60%),
-    linear-gradient(135deg, #f5f7fa 0%, #edf0f5 100%); /* Arrière-plan plus neutre */
-  color: #2a2a2a; /* Texte plus contrasté */
-  transition: all 0.3s ease-in-out;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $lightBackground1;
+  color: $textColor;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ==================== APP CONTAINER ==================== */
+.App {
   min-height: 100vh;
+  background: $lightBackground1;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .App {
+  background: $darkBackground;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+  color: $titleColor;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: $textColorDark;
+}
+
+p {
+  color: $textColor;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.dark-mode p {
+  color: $textColorDark;
+}
+
+a {
+  color: $primaryColor;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+.dark-mode a {
+  color: $accentColor;
+  
+  &:hover {
+    color: lighten($accentColor, 10%);
+  }
+}
+
+/* ==================== BUTTONS ==================== */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: $primaryGradient;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: $primaryColor;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: 2px solid $primaryColor;
+  font-weight: 600;
+  
+  &:hover {
+    background: $primaryColor;
+    color: white;
+  }
+}
+
+/* ==================== CARDS ==================== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px $lightBoxShadow;
+  transition: all 0.3s ease;
+  border: 1px solid $lightBorder1;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px $lightBoxShadowDark;
+  }
+}
+
+.dark-mode .card {
+  background: #2d3748;
+  border-color: rgba(139, 156, 255, 0.2);
+  
+  &:hover {
+    box-shadow: 0 8px 24px rgba(139, 156, 255, 0.3);
+  }
+}
+
+/* ==================== SECTIONS ==================== */
+.section {
+  padding: 80px 0;
   position: relative;
-  overflow-x: hidden;
 }
 
-/* ======= ÉTOILES ANIMÉES ======= */
-.circling-stars {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
+.section-light {
+  background: $lightBackground2;
 }
 
-.circling-star {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  animation: circleOrbit 22s linear infinite;
-  box-shadow: 0 0 8px currentColor; /* Ajout de glow pour meilleure visibilité */
+.section-accent {
+  background: $backgroundGradient;
 }
 
-.circling-star:nth-child(1) { background: #e77e8b; top: 80%; left: 40%; animation-delay: 0s; }
-.circling-star:nth-child(2) { background: #6b7b95; top: 150%; left: 15%; animation-delay: -5s; } /* Plus contrasté */
-.circling-star:nth-child(3) { background: #b8e4dc; top: 80%; left: 85%; animation-delay: -10s; }
-.circling-star:nth-child(4) { background: #7a3b62; top: 70%; left: 90%; animation-delay: -15s; }
-.circling-star:nth-child(5) { background: #6b7b95; top: 10%; left: 50%; animation-delay: -2s; } /* Plus contrasté */
-.circling-star:nth-child(6) { background: #e77e8b; top: 60%; left: 70%; animation-delay: -8s; }
-
-@keyframes circleOrbit {
-  0% { transform: rotate(0deg) translateX(80px) rotate(0deg); opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); opacity: 0.8; }
+.dark-mode .section-light,
+.dark-mode .section-accent {
+  background: $darkBackground;
 }
 
-/* ======= PAILLETTES ======= */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 50px, rgba(255, 255, 255, 0.9) 30%, rgba(231, 126, 139, 0.5) 50%, transparent 100%),
-    radial-gradient(3px 3px at 120px 200px, rgba(255, 255, 255, 0.9) 30%, rgba(138, 157, 184, 0.5) 50%, transparent 100%),
-    radial-gradient(2px 2px at 250px 150px, rgba(255, 255, 255, 0.9) 30%, rgba(184, 228, 220, 0.5) 50%, transparent 100%);
-  background-repeat: repeat;
-  background-size: 700px 500px;
-  z-index: -1;
-  opacity: 0.4; /* Légèrement plus visible */
-  animation: sparkleTwinkle 8s ease-in-out infinite;
+/* ==================== CONTAINER ==================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-@keyframes sparkleTwinkle {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); } /* Plus prononcé */
+/* ==================== GRID LAYOUTS ==================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
 }
 
-/* ======= TITRES ======= */
-h1, h2, h3, h4 {
-  font-weight: 700; /* Plus épais pour meilleur contraste */
-  color: #7a3b62;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Ombre légère pour détachement */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-h1 {
-  background: linear-gradient(45deg, #e77e8b, #6b7b95, #9ed4ca); /* Couleurs plus contrastées */
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $lightBackground2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primaryColor;
+  border-radius: 5px;
+  
+  &:hover {
+    background: $secondaryColor;
+  }
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: $darkBackground;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: $accentColor;
+  
+  &:hover {
+    background: lighten($accentColor, 10%);
+  }
+}
+
+/* ==================== UTILITIES ==================== */
+.text-center {
+  text-align: center;
+}
+
+.text-gradient {
+  background: $primaryGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  position: relative;
-  display: inline-block;
-  filter: contrast(1.1); /* Meilleur contraste */
+  background-clip: text;
 }
 
-h1::after {
-  content: '✨';
-  position: absolute;
-  top: -15px;
-  right: -25px;
-  font-size: 0.7em;
-  animation: sparkleSpin 4s infinite linear;
-  filter: brightness(1.2); /* Plus lumineux */
-}
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+.mb-5 { margin-bottom: 48px; }
 
-@keyframes sparkleSpin {
-  0% { transform: rotate(0deg) scale(1); opacity: 0.8; }
-  50% { transform: rotate(180deg) scale(1.4); opacity: 1; } /* Plus visible */
-  100% { transform: rotate(360deg) scale(1); opacity: 0.8; }
-}
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mt-5 { margin-top: 48px; }
 
-h2 {
-  color: #e77e8b;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 12px;
-  font-weight: 700;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 4px; /* Plus épais */
-  background: linear-gradient(90deg, transparent, #6b7b95, #e77e8b, #9ed4ca, transparent);
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-  color: #6b7b95; /* Plus contrasté */
-  border-left: 5px solid #b8e4dc; /* Plus épais */
-  padding-left: 15px;
-  font-weight: 600;
-}
-
-/* ======= BOUTONS ======= */
-button, .btn {
-  background: linear-gradient(45deg, #6b7b95, #a85a6a); /* Couleurs plus soutenues */
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 14px 32px;
-  font-weight: 700; /* Plus épais */
-  transition: all 0.4s ease;
-  box-shadow: 0 6px 20px rgba(107, 123, 149, 0.4); /* Ombre plus prononcée */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-button:hover, .btn:hover {
-  background: linear-gradient(45deg, #e77e8b, #f29aa8);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(231, 126, 139, 0.5); /* Ombre plus visible */
-}
-
-/* ======= CARTES ======= */
-.card {
-  background: rgba(255, 255, 255, 0.98); /* Moins transparent */
-  border: 1px solid rgba(138, 157, 184, 0.3); /* Bordure plus visible */
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(107, 123, 149, 0.25); /* Ombre plus prononcée */
-  transition: all 0.4s ease;
-  margin-bottom: 25px;
-  backdrop-filter: blur(10px); /* Effet de flou pour meilleur contraste */
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(231, 126, 139, 0.35); /* Ombre plus visible */
-  border-color: rgba(231, 126, 139, 0.4);
-}
-
-.card-title {
-  color: #7a3b62;
-  font-weight: 700; /* Plus épais */
-}
-
-.card-text {
-  color: #323030;
-  line-height: 1.6; /* Meilleure lisibilité */
-}
-
-/* ======= BADGES ======= */
-.badge {
-  background: linear-gradient(45deg, #6b7b95, #e77e8b);
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-weight: 700; /* Plus épais */
-  box-shadow: 0 4px 12px rgba(107, 123, 149, 0.4); /* Ombre plus prononcée */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.badge:hover {
-  background: linear-gradient(45deg, #e77e8b, #f29aa8);
-  transform: translateY(-2px);
-}
-
-/* ======= SKILLS ======= */
-.skill-tag {
-  background: rgba(184, 228, 220, 0.3); /* Plus opaque */
-  border: 1px solid rgba(184, 228, 220, 0.6); /* Bordure plus visible */
-  color: #2a2a2a; /* Texte plus contrasté */
-  border-radius: 15px;
-  padding: 6px 14px; /* Légèrement plus grand */
-  transition: all 0.3s ease;
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(184, 228, 220, 0.3);
-}
-
-.skill-tag:hover {
-  background: rgba(231, 126, 139, 0.2);
-  border-color: rgba(231, 126, 139, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(231, 126, 139, 0.3);
-}
-
-/* ======= AMÉLIORATIONS RESPONSIVES ======= */
-@media (max-width: 768px) {
-  body {
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(184, 228, 220, 0.25) 0%, transparent 70%),
-      radial-gradient(circle at 90% 80%, rgba(231, 126, 139, 0.2) 0%, transparent 60%),
-      linear-gradient(135deg, #f5f7fa 0%, #edf0f5 100%);
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1380px) {
+  .section {
+    padding: 60px 0;
   }
   
-  h1::after {
-    font-size: 0.5em;
-    top: -10px;
-    right: -15px;
+  .grid-2,
+  .grid-3 {
+    gap: 20px;
   }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 0 15px;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
   
   .card {
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(107, 123, 149, 0.2);
+    padding: 16px;
   }
 }
 
-/* ======= CONTRASTE AMÉLIORÉ POUR TEXTES LONGUES ======= */
-p, li, .text-content {
-  color: #2a2a2a;
-  line-height: 1.7;
-  font-weight: 400;
+/* ==================== LOADING STATE ==================== */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
 }
 
-strong, b {
-  color: #7a3b62;
-  font-weight: 600;
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid $lightBorder1;
+  border-top-color: $primaryColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-/* ======= LIENS ======= */
-a {
-  color: #e77e8b;
-  transition: all 0.3s ease;
-  font-weight: 500;
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
-a:hover {
-  color: #d86a7a;
-  text-shadow: 0 1px 2px rgba(231, 126, 139, 0.2);
+/* ==================== SELECTION ==================== */
+::selection {
+  background: $primaryColor;
+  color: white;
+}
+
+.dark-mode ::selection {
+  background: $accentColor;
+  color: $darkBackground;
 }

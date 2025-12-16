@@ -1,74 +1,134 @@
-import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
+import React, { useContext } from "react";
 import "./Project.scss";
-import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
+import { bigProjects } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import Loading from "../../containers/loading/Loading";
+import { Fade } from "react-reveal";
+
 export default function Projects() {
-  const GithubRepoCard = lazy(() =>
-    import("../../components/githubRepoCard/GithubRepoCard")
-  );
-  const FailedLoading = () => null;
-  const renderLoader = () => <Loading />;
-  const [repo, setrepo] = useState([]);
-  // todo: remove useContex because is not supported
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
 
-  useEffect(() => {
-    const getRepoData = () => {
-      fetch("/profile.json")
-        .then(result => {
-          if (result.ok) {
-            return result.json();
-          }
-          throw result;
-        })
-        .then(response => {
-          setrepoFunction(response.data.user.pinnedItems.edges);
-        })
-        .catch(function (error) {
-          console.error(
-            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
-          );
-          setrepoFunction("Error");
-        });
-    };
-    getRepoData();
-  }, []);
-
-  function setrepoFunction(array) {
-    setrepo(array);
+  if (!bigProjects.display) {
+    return null;
   }
-  if (
-    !(typeof repo === "string" || repo instanceof String) &&
-    openSource.display
-  ) {
-    return (
-      <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
-            {repo.map((v, i) => {
-              if (!v) {
-                console.error(
-                  `Github Object for repository number : ${i} is undefined`
-                );
-              }
-              return (
-                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
-              );
-            })}
-          </div>
-          <Button
-            text={"More Projects"}
-            className="project-button"
-            href={socialMediaLinks.github}
-            newTab={true}
-          />
+
+  function openUrlInNewTab(url) {
+    if (!url) return;
+    window.open(url, "_blank").focus();
+  }
+
+  return (
+    <Fade bottom duration={1000} distance="20px">
+      <div className="projects-section" id="projects">
+        {/* HEADER */}
+        <div className="projects-header">
+          <h1 className={isDark ? "projects-title dark-mode" : "projects-title"}>
+            {bigProjects.title}
+          </h1>
+          <p className={isDark ? "projects-subtitle dark-mode" : "projects-subtitle"}>
+            {bigProjects.subtitle}
+          </p>
         </div>
-      </Suspense>
-    );
-  } else {
-    return <FailedLoading />;
-  }
+
+        {/* GRILLE DE PROJETS */}
+        <div className="projects-grid">
+          {bigProjects.projects.map((project, i) => (
+            <Fade bottom duration={1000} distance="20px" delay={i * 100} key={i}>
+              <div className={isDark ? "project-card dark-mode" : "project-card"}>
+                {/* IMAGE */}
+                <div className="project-image-container">
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.projectName}
+                      className="project-image"
+                    />
+                  )}
+                  {project.technologies && project.technologies[0] && (
+                    <div className="project-tech-badge">
+                      {project.technologies[0]}
+                    </div>
+                  )}
+                </div>
+
+                {/* CONTENU */}
+                <div className="project-content">
+                  <h3 className="project-name">
+                    {project.projectName}
+                  </h3>
+
+                  <p className="project-description">
+                    {project.projectDesc}
+                  </p>
+
+                  {/* TECHNOLOGIES */}
+                  {project.technologies && project.technologies.length > 1 && (
+                    <div className="project-tech-stack">
+                      {project.technologies.slice(1, 5).map((tech, idx) => (
+                        <span key={idx} className="tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 5 && (
+                        <span className="tech-tag">
+                          +{project.technologies.length - 5}
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  {/* FOOTER */}
+                  <div className="project-footer">
+                    <div className="project-stats">
+                      {project.technologies && (
+                        <div className="stat-item">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            />
+                          </svg>
+                          {project.technologies.length} techs
+                        </div>
+                      )}
+                    </div>
+
+                    {project.footerLink && project.footerLink.length > 0 && project.footerLink[0].url && (
+                      <a
+                        href={project.footerLink[0].url}
+                        className="project-link-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.footerLink[0].name || "Voir le projet"}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </Fade>
+  );
 }

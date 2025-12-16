@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import "./Skills.scss";
-import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skillsSection } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
@@ -13,39 +12,52 @@ export default function Skills() {
   }
 
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
-      <Fade bottom duration={1000}>
-        <div className="skills-container-main">
-          <h1 className={isDark ? "dark-mode skills-heading" : "skills-heading"}>
-            {skillsSection.title}
+    <div className="skills-main-div" id="skills">
+      <Fade bottom duration={1000} distance="20px">
+        <div className="skills-container">
+          <h1 className={isDark ? "skills-heading dark-mode" : "skills-heading"}>
+            Compétences
           </h1>
 
-          <p
-            className={
-              isDark
-                ? "dark-mode subTitle skills-text-subtitle"
-                : "subTitle skills-text-subtitle"
-            }
-          >
-            {skillsSection.subTitle}
-          </p>
+          {/* COMPÉTENCES TECHNIQUES PAR CATÉGORIES */}
+          {skillsSection.softwareSkills && skillsSection.softwareSkills.length > 0 && (
+            <div className="skills-categories-section">
+             
 
-          <SoftwareSkill />
+              <div className="skills-categories-grid">
+                {skillsSection.softwareSkills.map((category, i) => (
+                  <div 
+                    className={isDark ? "skill-category-card dark-mode" : "skill-category-card"}
+                    key={i}
+                    style={{ animationDelay: `${i * 0.15}s` }}
+                  >
+                    {/* HEADER DE LA CATÉGORIE */}
+                    <div className="skill-category-header">
+                      <div className="skill-category-icon">
+                        <i className={category.skills[0]?.fontAwesomeClassname || "fas fa-code"}></i>
+                      </div>
+                      <h3 className={isDark ? "skill-category-name dark-mode" : "skill-category-name"}>
+                        {category.category}
+                      </h3>
+                    </div>
 
-          <div className="skills-details">
-            {skillsSection.skills.map((skills, i) => (
-              <p
-                key={i}
-                className={
-                  isDark
-                    ? "dark-mode subTitle skills-text"
-                    : "subTitle skills-text"
-                }
-              >
-                {skills}
-              </p>
-            ))}
-          </div>
+                    {/* LISTE DES COMPÉTENCES */}
+                    <div className="skill-category-items">
+                      {category.skills.map((skill, j) => (
+                        <div 
+                          className={isDark ? "skill-item dark-mode" : "skill-item"} 
+                          key={j}
+                        >
+                          <i className={skill.fontAwesomeClassname}></i>
+                          <span>{skill.skillName}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </Fade>
     </div>

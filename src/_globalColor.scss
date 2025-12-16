@@ -1,91 +1,119 @@
-/* ==================== GLOBAL COLOR PALETTE ==================== */
+/* ==================== NOUVELLE PALETTE MODERNE ==================== */
+/* Palette professionnelle : Violet profond + Bleu électrique + Accents corail */
+
+// === COULEURS PRINCIPALES ===
+$primaryColor: #ba5a81;        // Bleu-violet principal
+$secondaryColor: #764ba2;      // Violet profond
+$accentColor: #f093fb;         // Rose-violet lumineux
+$accentOrange: #fa709a;        // Corail moderne
 
 // === BUTTON COLORS ===
-$buttonColor: #7ca79f;         // Menthe douce
-$buttonHover: #c1c1c1;         // Rose doux au hover
-$topButtonHover: #d2d5d8;      // Bleu-gris subtil
+$buttonColor: #a6637e;         
+$buttonHover: #764ba2;         
+$topButtonHover: #8b9cff;      
 
-// === TEXT COLORS (LIGHT THEME) - AJUSTÉS POUR MEILLEURE LISIBILITÉ ===
-$titleColor: #7a3b62;          // Rose profond plus soutenu
-$textColor: #2a2a2a;           // Gris anthracite plus contrasté
-$subTitle: #924d5d;            // Rosé subtil conservé
-$cardSubtitle: #6b7b95;        // Bleu-gris plus foncé
-$talkCardSubTitle: #5a657a;    // Gris bleuté plus contrasté
-$blogCardTitleColor: #4a3a4f;  // Gris chaud plus foncé
+// === TEXT COLORS (LIGHT THEME) ===
+$titleColor: #2d3748;          // Gris anthracite profond
+$textColor: #4a5568;           // Gris ardoise
+$subTitle: #6271b1;            // Bleu-violet
+$cardSubtitle: #718096;        // Gris moyen
+$talkCardSubTitle: #4a5568;    
+$blogCardTitleColor: #2d3748;  
 
 // === TEXT COLORS (DARK THEME) ===
-$textColorDark: #f5f5f7;
+$textColorDark: #e2e8f0;
 
 // === TOGGLE SWITCH COLORS ===
-$toggleCheck: #e77e8b;         // Accent rose
-$toggleSwitchSliderBG: #b2b2b2; // Bleu-gris pastel
+$toggleCheck: #667eea;         
+$toggleSwitchSliderBG: #cbd5e0;
 
 // === GITHUB REPO COLORS ===
-$githubRepoCardLanguageColorBG: #b8e4dc;
-$githubRepoCardColor: #3e3e3e;
-$githubRepoCardRepoCardStatsColor: #6b7b95; // Plus contrasté
-$githubRepoCardRepoNameColor: #7a3b62;
-$githubProfileCardLocationTS: #6b7b95;      // Plus contrasté
-$githubProfileCardBorder: #e77e8b;
+$githubRepoCardLanguageColorBG: #e6effb;
+$githubRepoCardColor: #2d3748;
+$githubRepoCardRepoCardStatsColor: #718096;
+$githubRepoCardRepoNameColor: #667eea;
+$githubProfileCardLocationTS: #718096;
+$githubProfileCardBorder: #667eea;
 
-// === BACKGROUNDS (LIGHT) - AJUSTÉS POUR MEILLEUR CONTRASTE ===
-$lightBackground1: #f8f4f9;    // Conservé
-$lightBackground2: #f5f5f5;    // Légèrement plus clair
-$lightBackground3: #fffaf7;    // Beige légèrement plus clair
+// === BACKGROUNDS (LIGHT) ===
+$lightBackground1: #ffffff;    
+$lightBackground2: #f7fafc;    
+$lightBackground3: #edf2f7;    
 
-$blogCardContainerColor: rgba(231, 126, 139, 0.1); // Légèrement plus opaque
+$blogCardContainerColor: rgba(102, 126, 234, 0.05);
 
 // === BACKGROUNDS (DARK) ===
-$darkBackground: #2b2b2f;
+$darkBackground: #1a202c;
 
 // === BOX SHADOWS ===
-$lightBoxShadowDark: rgba(231, 126, 139, 0.3);   // Plus visible
-$lightBoxShadow: rgba(138, 157, 184, 0.25);      // Plus visible
-$lightBoxShadowDarker: rgba(122, 59, 98, 0.2);   // Plus visible
+$lightBoxShadowDark: rgba(102, 126, 234, 0.25);
+$lightBoxShadow: rgba(118, 75, 162, 0.15);
+$lightBoxShadowDarker: rgba(102, 126, 234, 0.35);
 
-$darkBoxShadow: #e77e8b;
-$darkBoxShadow2: #8a9db8;
+$darkBoxShadow: #667eea;
+$darkBoxShadow2: #8b9cff;
 
 // === GRADIENTS ===
 $experienceCardBlurredDivLG: linear-gradient(
-  rgba(231, 126, 139, 0.95),
-  rgba(138, 157, 184, 0.85)
+  135deg,
+  rgba(102, 126, 234, 0.95),
+  rgba(118, 75, 162, 0.95)
 );
 $experienceCardBannerLG: linear-gradient(
-  rgba(184, 228, 220, 0.25),  // Légèrement plus opaque
-  rgba(231, 126, 139, 0.2)    // Légèrement plus opaque
+  135deg,
+  rgba(102, 126, 234, 0.1),
+  rgba(118, 75, 162, 0.1)
 );
 
+// === GRADIENTS SUPPLÉMENTAIRES ===
+$primaryGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$accentGradient: linear-gradient(135deg, #f093fb 0%, #fa709a 100%);
+$backgroundGradient: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+
 // === BORDERS ===
-$progressBarBackground: #7fe7d5;
-$lightBorder1: rgba(184, 228, 220, 0.4); // Plus visible
-$educationCardBorder: #6b7b95;            // Plus contrasté
+$progressBarBackground: #e6effb;
+$lightBorder1: rgba(102, 126, 234, 0.2);
+$educationCardBorder: #667eea;
 
 // === HOVERS ===
-$achievementCertificateCardHoverDark: rgba(231, 126, 139, 0.3);  // Plus visible
-$blogCardHoverSmallColor: rgba(138, 157, 184, 0.3);              // Plus visible
-$headerHoverBG: rgba(184, 228, 220, 0.3);                        // Plus visible
-$contactDetailHoverTS: #e77e8b;
+$achievementCertificateCardHoverDark: rgba(102, 126, 234, 0.25);
+$blogCardHoverSmallColor: rgba(118, 75, 162, 0.15);
+$headerHoverBG: rgba(102, 126, 234, 0.1);
+$contactDetailHoverTS: #667eea;
 
 // === MISC BACKGROUNDS ===
-$progressBarSpanBG: #9ed4ca;
-$iconBackground: #6b7b95; // Plus contrasté
+$progressBarSpanBG: #667eea;
+$iconBackground: #667eea;
 
 // === HEADER ===
 $appHeaderBG: transparent;
 
 // === MISC COLORS ===
-$skillsColor: #6b7b95; // Plus contrasté
-$appLink: #e77e8b;
+$skillsColor: #718096;
+$appLink: #667eea;
 
 // === SOCIAL MEDIA ICONS ===
-$faceBook: #6b7b95;   // Plus contrasté
-$linkedin: #76b2d7;
-$github: #262727;
-$gitlab: #e77e8b;
-$google: #e77e8b;
-$twitter: #6b7b95;    // Plus contrasté
-$medium: #e77e8b;
-$stackoverflow: #6b7b95; // Plus contrasté
-$instagram: #e77e8b;
-$kaggle: #6b7b95;     // Plus contrasté
+$faceBook: #1877f2;
+$linkedin: #0a66c2;
+$github: #181717;
+$gitlab: #fc6d26;
+$google: #ea4335;
+$twitter: #1da1f2;
+$medium: #000000;
+$stackoverflow: #f48024;
+$instagram: #e4405f;
+$kaggle: #20beff;
+
+// === STATUT/BADGES ===
+$successColor: #48bb78;
+$warningColor: #ed8936;
+$errorColor: #f56565;
+$infoColor: #4299e1;
+
+/* ==================== VARIABLES D'UTILISATION ==================== */
+
+// Utilisez ces variables dans vos composants :
+// background: $primaryGradient;
+// color: $titleColor;
+// border-color: $primaryColor;
+// box-shadow: 0 4px 20px $lightBoxShadow;

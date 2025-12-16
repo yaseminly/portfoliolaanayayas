@@ -62,20 +62,22 @@ const skillsSection = {
       category: "Backend",
       skills: [
         { skillName: "Java / Spring Boot", fontAwesomeClassname: "fab fa-java" },
-        { skillName: "Python / Django", fontAwesomeClassname: "fab fa-python" },
+        { skillName: "Python / Django  / Flask / FastAPI", fontAwesomeClassname: "fab fa-python" },
         { skillName: "C# / .NET", fontAwesomeClassname: "fas fa-code" },
-        { skillName: "SQL / PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+        { skillName: "SQL / PostgreSQL / MySQL / SQLite / MongoDB", fontAwesomeClassname: "fas fa-database" },
       ],
     },
     {
       category: "Frontend",
       skills: [
         { skillName: "ReactJS / Angular", fontAwesomeClassname: "fab fa-react" },
+        { skillName: "Streamlit", fontAwesomeClassname: "fas fa-chart-line" },
         { skillName: "HTML / CSS / Sass", fontAwesomeClassname: "fab fa-html5" },
         { skillName: "TypeScript", fontAwesomeClassname: "fas fa-code" },
         { skillName: "Bootstrap", fontAwesomeClassname: "fab fa-bootstrap" },
       ],
     },
+   
     {
       category: "Data & AI",
       skills: [
@@ -94,6 +96,13 @@ const skillsSection = {
         { skillName: "Git / GitHub", fontAwesomeClassname: "fab fa-git-alt" },
       ],
     },
+     {
+      category: "Mobile Development",
+      skills: [
+        { skillName: "Flutter", fontAwesomeClassname: "fas fa-mobile-alt" },
+        { skillName: "React Native", fontAwesomeClassname: "fab fa-react" },
+      ],
+    }
   ],
   display: true
 };
@@ -114,7 +123,6 @@ const educationInfo = {
       logo: require("./assets/images/cretes.png"),
       subHeader: "Baccalauréat en Sciences Physiques et Chimiques",
       duration: "2019 - 2020",
-     
     },
   ]
 };
@@ -170,6 +178,27 @@ const bigProjects = {
       footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/yaseminly/Assistant-jesa.git" }],
     },
     { 
+      image: require("./assets/images/weather.png"),
+      projectName: "Prédiction Climatique", 
+      projectDesc: "Développement d'une application de prédiction météorologique via streamlit utilisant des algorithmes de machine learning pour analyser les données climatiques historiques et fournir des prévisions précises. Interface interactive avec visualisation de données et cartographie en temps réel.", 
+      technologies: ["Python", "Machine Learning", "TensorFlow", "Streamlit", "Pandas", "Matplotlib", "scikit-learn"],
+      footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/yaseminly/WeatherPredictionPFA.git" }],
+    },
+    { 
+      image: require("./assets/images/ebanking.png"),
+      projectName: "E-Banking", 
+      projectDesc: "Conception et développement d'une plateforme bancaire permettant la gestion de comptes, les virements, la consultation de l'historique des transactions et les opérations bancaires courantes. Basée sur l'architecture des micro-services.", 
+      technologies: ["Java", "Spring Boot", "MySQL", "Angular", "REST API"],
+      footerLink: [{ name: "Voir sur GitHub", url:"https://github.com/yaseminly/eBanking.git" }],
+    },
+    { 
+      image: require("./assets/images/flutter.png"),
+      projectName: "Application Mobile Flutter", 
+      projectDesc: "Développement d'une application mobile multifonctionnelle intégrant un chatbot intelligent basé sur RAG (Retrieval-Augmented Generation) pour l'assistance EMSI, et un système de classification de fruits utilisant un modèle CNN converti en TFLite pour l'inférence en temps réel sur mobile.", 
+      technologies: ["Flutter", "Dart", "TensorFlow Lite", "RAG", "CNN"],
+      footerLink: [] 
+    },
+    { 
       image: require("./assets/images/travel.png"), 
       projectName: "Travello", 
       projectDesc: "Développement d'un site web en Python dédié à la réservation de vols de voyage à l'aide du framework Django. L'application permet aux utilisateurs de rechercher des vols, consulter les détails prix, destination, horaires, effectuer des réservations en ligne et gérer leurs réservations.", 
@@ -201,6 +230,12 @@ const bigProjects = {
   display: true
 };
 
+/* ==================== OPEN SOURCE - UNE SEULE DÉCLARATION ==================== */
+const openSource = {
+  showGithubProfile: "true",
+  display: false  // ← DÉSACTIVÉ pour éviter la duplication
+};
+
 /* ==================== CERTIFICATIONS ==================== */
 const achievementSection = {
   title: emoji("Certifications & Formations "),
@@ -212,13 +247,12 @@ const achievementSection = {
         { 
           title: "Oracle Cloud Infrastructure 2025 Certified DevOps Professional", 
           image: require("./assets/images/oracle1.png"),
-          description: "Certification Oracle sur l’infrastructure Cloud et DevOps.",
+          description: "Certification Oracle sur l'infrastructure Cloud et DevOps.",
           footerLink: [
             { 
               name: "Certification ", 
-               url:"https://catalog-education.oracle.com/pls/certview/sharebadge?id=2037B4B9759E2914DA37C68E0618F1F3D6E5F42A539BAD3590AEA781E289EF6E" // tu vas déposer ton PDF ici
+              url:"https://catalog-education.oracle.com/pls/certview/sharebadge?id=2037B4B9759E2914DA37C68E0618F1F3D6E5F42A539BAD3590AEA781E289EF6E"
             }
-            
           ]
         },
         { 
@@ -308,12 +342,6 @@ const contactInfo = {
 };
 
 /* ==================== FOOTER / JOB STATUS ==================== */
-
-const openSource = {
-  showGithubProfile: "true",
-  display: true
-};
-
 const resumeSection = {
   title: "Mon CV",
   subtitle: "Téléchargez mon CV pour un aperçu détaillé de mon parcours et compétences",

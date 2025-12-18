@@ -168,7 +168,7 @@ const bigProjects = {
       projectName: "Medicare — Assistant médical intelligent",
       projectDesc: "Application Full Stack (ReactJS & Spring Boot) intégrant un chatbot médical intelligent pour accompagner les patients dans la gestion de leurs consultations et rendez-vous. Projet académique réalisé en binôme, mettant en œuvre des technologies modernes d'IA et de développement web.",
       technologies: ["ReactJS", "Spring Boot", "Chatbot", "AI", "PostgreSQL"],
-      footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/haitammodli/ADA.git" }],
+      footerLink: [{ name: "Voir sur GitHub", url: "https://github.com/yaseminly/MediCare.git" }],
     },
     {
       image: require("./assets/images/jesaa.png"),

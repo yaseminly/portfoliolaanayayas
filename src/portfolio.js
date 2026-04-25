@@ -18,7 +18,7 @@ const greeting = {
   username: "Yasmine Laanaya",
   title: "Yasmine — Software Engineer | AI & Data Innovator",
   subTitle: emoji(
-    "Driven by innovation and data, I design intelligent, data-powered applications that bridge AI, analytics, and software engineering to deliver meaningful solutions."
+    "Final-year Software Engineering student, currently interning at Inetum across full-stack development, DevOps, and AI. I thrive at the intersection of engineering, automation, and intelligence."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing",
@@ -29,7 +29,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/yaseminly",
   linkedin: "https://www.linkedin.com/in/yasmine-laanaya-81819431b/",
-  gmail: "mailto:yasminnln2003@gmail.com",
+  gmail: "mailto:yasminelaanayapro@gmail.com",
   display: true
 };
 
@@ -336,9 +336,9 @@ const languages = {
 const contactInfo = {
   title: emoji("Contactez-moi ☎️"),
   subtitle: "Je suis ouverte à toute opportunité de stage PFE ou collaboration dans les domaines IA, Data ou développement Full Stack.",
-  email_address: "yasminnln2003@gmail.com",
+  email_address: "yasminelaanayapro@gmail.com",
   location: "Casablanca, Maroc",
-  availability: "Disponible pour un stage PFE à partir de Février 2025"
+  
 };
 
 /* ==================== FOOTER / JOB STATUS ==================== */

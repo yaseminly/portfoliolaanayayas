@@ -12,50 +12,45 @@ export default function Skills() {
   }
 
   return (
-    <div className="skills-main-div" id="skills">
-      <Fade bottom duration={1000} distance="20px">
+    <div className={isDark ? "dark-mode skills-main-div" : "skills-main-div"} id="skills">
+      <Fade bottom duration={1000} distance="40px">
         <div className="skills-container">
-          <h1 className={isDark ? "skills-heading dark-mode" : "skills-heading"}>
-            Compétences
-          </h1>
+          
+          {/* HEADER DE SECTION */}
+          <div className="skills-header">
+            <h1 className="skills-heading">Expertises Techniques</h1>
+            <div className="skills-underline"></div>
+          </div>
 
-          {/* COMPÉTENCES TECHNIQUES PAR CATÉGORIES */}
+          {/* GRILLE DE CATÉGORIES */}
           {skillsSection.softwareSkills && skillsSection.softwareSkills.length > 0 && (
-            <div className="skills-categories-section">
-             
-
-              <div className="skills-categories-grid">
-                {skillsSection.softwareSkills.map((category, i) => (
-                  <div 
-                    className={isDark ? "skill-category-card dark-mode" : "skill-category-card"}
-                    key={i}
-                    style={{ animationDelay: `${i * 0.15}s` }}
-                  >
-                    {/* HEADER DE LA CATÉGORIE */}
+            <div className="skills-grid">
+              {skillsSection.softwareSkills.map((category, i) => (
+                <Fade bottom duration={1000} delay={i * 150} key={i}>
+                  <div className="skill-category-card">
+                    
+                    {/* HEADER DE LA CARTE (ICÔNE + NOM) */}
                     <div className="skill-category-header">
-                      <div className="skill-category-icon">
+                      <div className="skill-category-icon-box">
                         <i className={category.skills[0]?.fontAwesomeClassname || "fas fa-code"}></i>
                       </div>
-                      <h3 className={isDark ? "skill-category-name dark-mode" : "skill-category-name"}>
+                      <h3 className="skill-category-name">
                         {category.category}
                       </h3>
                     </div>
 
-                    {/* LISTE DES COMPÉTENCES */}
+                    {/* LISTE DES ITEMS (TAGS) */}
                     <div className="skill-category-items">
                       {category.skills.map((skill, j) => (
-                        <div 
-                          className={isDark ? "skill-item dark-mode" : "skill-item"} 
-                          key={j}
-                        >
+                        <div className="skill-item-tag" key={j}>
                           <i className={skill.fontAwesomeClassname}></i>
                           <span>{skill.skillName}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                ))}
-              </div>
+                </Fade>
+              ))}
             </div>
           )}
         </div>

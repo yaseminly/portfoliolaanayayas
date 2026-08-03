@@ -1,70 +1,62 @@
 import React, { useContext } from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { illustration, contactInfo } from "../../portfolio";
+import { contactInfo } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
   const { isDark } = useContext(StyleContext);
 
-  // Classes dynamiques selon le mode
-  const subtitleClass = isDark ? "contact-subtitle dark-mode-text" : "contact-subtitle subTitle";
-  const textDivClass = isDark ? "contact-text-div dark-mode-text" : "contact-text-div";
-
   return (
     <Fade bottom duration={1000} distance="40px">
-      <div className="main contact-margin-top" id="contact">
-        <div className="contact-div-main">
+      <div className={isDark ? "dark-mode contact-section" : "contact-section"} id="contact">
+        <div className="contact-container">
           
-          {/* ===== SECTION TEXTE ===== */}
-          <div className="contact-header">
-            <h1 className="heading contact-title">{contactInfo.title}</h1>
-            
-            <p className={subtitleClass}>{contactInfo.subtitle}</p>
+          <div className="contact-card">
+            {/* EN-TÊTE */}
+            <div className="contact-header">
+              <h1 className="contact-title">{contactInfo.title}</h1>
+              <div className="title-underline"></div>
+              <p className="contact-subtitle">{contactInfo.subtitle}</p>
+            </div>
 
-            <div className={textDivClass}>
+            {/* DÉTAILS DE CONTACT */}
+            <div className="contact-content">
               
-              {/* 📍 Localisation */}
-              {contactInfo.location && (
-                <>
-                  <p className="contact-detail">
-                    <i className="fas fa-map-marker-alt"></i> {contactInfo.location}
-                  </p>
-                  <div className="spacer"></div>
-                </>
-              )}
+              <div className="contact-info-list">
+                {/* 📍 Localisation */}
+                {contactInfo.location && (
+                  <div className="contact-item">
+                    <div className="icon-box">
+                      <i className="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>{contactInfo.location}</p>
+                  </div>
+                )}
 
-              {/* 🕐 Disponibilité */}
-              {contactInfo.availability && (
-                <>
-                  <p className="contact-detail">
-                    <i className="fas fa-calendar-check"></i> {contactInfo.availability}
-                  </p>
-                  <div className="spacer"></div>
-                </>
-              )}
-
-              {/* 📧 Adresse e-mail */}
-              {contactInfo.email_address && (
-                <>
+                {/* 📧 Email avec effet Glass */}
+                {contactInfo.email_address && (
                   <a
-                    className="contact-detail contact-detail-email"
+                    className="contact-item email-link"
                     href={`mailto:${contactInfo.email_address}`}
                   >
-                    <i className="fas fa-envelope"></i> {contactInfo.email_address}
+                    <div className="icon-box">
+                      <i className="fas fa-envelope"></i>
+                    </div>
+                    <span>{contactInfo.email_address}</span>
                   </a>
-                  <div className="spacer"></div>
-                </>
-              )}
+                )}
+              </div>
 
-              {/* 🔗 Réseaux sociaux */}
-              <SocialMedia />
+              {/* RÉSEAUX SOCIAUX */}
+              <div className="contact-social">
+                <p className="social-text">Retrouvez-moi sur les réseaux</p>
+                <SocialMedia />
+              </div>
             </div>
           </div>
 
-          {/* ===== SECTION ILLUSTRATION ===== */}
-         
         </div>
       </div>
     </Fade>

@@ -7,39 +7,24 @@ import StyleContext from "../../contexts/StyleContext";
 
 export default function WorkExperience() {
   const {isDark} = useContext(StyleContext);
-  
-  if (workExperiences.display) {
-    return (
-      <div id="experience" className="experience-section">
-        <Fade bottom duration={1000} distance="20px">
-          <div className="experience-container">
-            <div className="experience-header">
-              <h1 className="experience-heading">Expériences</h1>
-            </div>
+  if (!workExperiences.display) return null;
 
-            <div className="experience-grid">
-              {workExperiences.experience.map((card, i) => {
-                return (
-                  <ExperienceCard
-                    key={i}
-                    isDark={isDark}
-                    cardInfo={{
-                      company: card.company,
-                      desc: card.desc,
-                      date: card.date,
-                      companylogo: card.companylogo,
-                      role: card.role,
-                      descBullets: card.descBullets,
-                      skills: card.skills
-                    }}
-                  />
-                );
-              })}
-            </div>
+  return (
+    <div id="experience" className={isDark ? "dark-mode exp-section" : "exp-section"}>
+      <Fade bottom duration={1000} distance="30px">
+        <div className="exp-container">
+          <div className="exp-header">
+            <h1 className="exp-title">Parcours Professionnel</h1>
+            <div className="exp-ornament">✦</div>
           </div>
-        </Fade>
-      </div>
-    );
-  }
-  return null;
+          
+          <div className="exp-grid-layout">
+            {workExperiences.experience.map((card, i) => (
+              <ExperienceCard key={i} isDark={isDark} cardInfo={card} />
+            ))}
+          </div>
+        </div>
+      </Fade>
+    </div>
+  );
 }

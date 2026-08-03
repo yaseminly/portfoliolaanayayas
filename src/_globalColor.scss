@@ -1,216 +1,73 @@
-/* ==================== NOUVELLE PALETTE MODERNE ==================== */
-/* Palette professionnelle : Violet profond + Bleu électrique + Accents corail */
+/* ==================== LUXURY ROSE GOLD & GOLD PALETTE (REPAIRED) ==================== */
 
-// === COULEURS PRINCIPALES ===
-$primaryColor: #ba5a81;        // Bleu-violet principal
-$secondaryColor: #764ba2;      // Violet profond
-$accentColor: #f093fb;         // Rose-violet lumineux
-$accentOrange: #fa709a;        // Corail moderne
+// --- COULEURS DE BASE ---
+$primaryColor: #b76e79;        // Rose Gold
+$secondaryColor: #8e5d72;      // Vieux Rose
+$accentColor: #d4af37;         // Or Métallique
+$accentOrange: #e5c29f;        
 
-// === BUTTON COLORS ===
-$buttonColor: #a6637e;         
-$buttonHover: #764ba2;         
-$topButtonHover: #8b9cff;      
+$buttonColor: #b76e79;
+$buttonHover: #d4af37;
+$topButtonHover: #e5c29f;
 
-// === TEXT COLORS (LIGHT THEME) ===
-$titleColor: #2d3748;          // Gris anthracite profond
-$textColor: #4a5568;           // Gris ardoise
-$subTitle: #6271b1;            // Bleu-violet
-$cardSubtitle: #718096;        // Gris moyen
-$talkCardSubTitle: #4a5568;    
-$blogCardTitleColor: #2d3748;  
-
-// === TEXT COLORS (DARK THEME) ===
-$textColorDark: #e2e8f0;
-
-// === TOGGLE SWITCH COLORS ===
-$toggleCheck: #667eea;         
-$toggleSwitchSliderBG: #cbd5e0;
-
-// === GITHUB REPO COLORS ===
-$githubRepoCardLanguageColorBG: #e6effb;
-$githubRepoCardColor: #2d3748;
-$githubRepoCardRepoCardStatsColor: #718096;
-$githubRepoCardRepoNameColor: #667eea;
-$githubProfileCardLocationTS: #718096;
-$githubProfileCardBorder: #667eea;
-
-// === BACKGROUNDS (LIGHT) ===
-$lightBackground1: #ffffff;    
-$lightBackground2: #f7fafc;    
-$lightBackground3: #edf2f7;    
-
-$blogCardContainerColor: rgba(102, 126, 234, 0.05);
-
-// === BACKGROUNDS (DARK) ===
-$darkBackground: #1a202c;
-
-// === BOX SHADOWS ===
-$lightBoxShadowDark: rgba(102, 126, 234, 0.25);
-$lightBoxShadow: rgba(118, 75, 162, 0.15);
-$lightBoxShadowDarker: rgba(102, 126, 234, 0.35);
-
-$darkBoxShadow: #667eea;
-$darkBoxShadow2: #8b9cff;
-
-// === GRADIENTS ===
-$experienceCardBlurredDivLG: linear-gradient(
-  135deg,
-  rgba(102, 126, 234, 0.95),
-  rgba(118, 75, 162, 0.95)
-);
-$experienceCardBannerLG: linear-gradient(
-  135deg,
-  rgba(102, 126, 234, 0.1),
-  rgba(118, 75, 162, 0.1)
-);
-
-// === GRADIENTS SUPPLÉMENTAIRES ===
-$primaryGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-$accentGradient: linear-gradient(135deg, #f093fb 0%, #fa709a 100%);
-$backgroundGradient: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-
-// === BORDERS ===
-$progressBarBackground: #e6effb;
-$lightBorder1: rgba(102, 126, 234, 0.2);
-$educationCardBorder: #667eea;
-
-// === HOVERS ===
-$achievementCertificateCardHoverDark: rgba(102, 126, 234, 0.25);
-$blogCardHoverSmallColor: rgba(118, 75, 162, 0.15);
-$headerHoverBG: rgba(102, 126, 234, 0.1);
-$contactDetailHoverTS: #667eea;
-
-// === MISC BACKGROUNDS ===
-$progressBarSpanBG: #667eea;
-$iconBackground: #667eea;
-
-// === HEADER ===
-$appHeaderBG: transparent;
-
-// === MISC COLORS ===
-$skillsColor: #718096;
-$appLink: #667eea;
-
-// === SOCIAL MEDIA ICONS ===
-$faceBook: #1877f2;
-$linkedin: #0a66c2;
-$github: #181717;
-$gitlab: #fc6d26;
-$google: #ea4335;
-$twitter: #1da1f2;
-$medium: #000000;
-$stackoverflow: #f48024;
-$instagram: #e4405f;
-$kaggle: #20beff;
-
-// === STATUT/BADGES ===
-$successColor: #48bb78;
-$warningColor: #ed8936;
-$errorColor: #f56565;
-$infoColor: #4299e1;
-
-/* ==================== VARIABLES D'UTILISATION ==================== */
-
-// Utilisez ces variables dans vos composants :
-// background: $primaryGradient;
-// color: $titleColor;
-// border-color: $primaryColor;
-// box-shadow: 0 4px 20px $lightBoxShadow;/* ==================== GIRLY PROFESSIONAL PALETTE ==================== */
-/* Rose poudré · Mauve doux · Crème chaud · Accents dorés */
-
-// === COULEURS PRINCIPALES ===
-$primaryColor: #c9748f;        // Rose poudré élégant
-$secondaryColor: #9b6b9e;      // Mauve profond
-$accentColor: #e8a0b4;         // Rose blush lumineux
-$accentOrange: #d4a0c0;        // Mauve rosé doux
-
-// === BUTTON COLORS ===
-$buttonColor: #c9748f;
-$buttonHover: #9b6b9e;
-$topButtonHover: #c9a0d4;
-
-// === TEXT COLORS (LIGHT THEME) ===
-$titleColor: #2d2235;          // Prune très foncé
-$textColor: #4a3f55;           // Violet-gris doux
-$subTitle: #9b6b9e;            // Mauve
-$cardSubtitle: #8c7a95;        // Gris lavande
+// --- TYPOGRAPHIE ---
+$titleColor: #2d2235;          // Prune Royal
+$textColor: #4a3f55;           
+$subTitle: #8e5d72;            
+$cardSubtitle: #8c7a95;        
 $talkCardSubTitle: #4a3f55;
 $blogCardTitleColor: #2d2235;
+$textColorDark: #f9f1f1;
 
-// === TEXT COLORS (DARK THEME) ===
-$textColorDark: #f5eef8;       // Blanc rosé crème
-
-// === TOGGLE SWITCH COLORS ===
-$toggleCheck: #c9748f;
-$toggleSwitchSliderBG: #e8d5e0;
-
-// === GITHUB REPO COLORS ===
-$githubRepoCardLanguageColorBG: #fdf0f4;
-$githubRepoCardColor: #2d2235;
-$githubRepoCardRepoCardStatsColor: #8c7a95;
-$githubRepoCardRepoNameColor: #c9748f;
-$githubProfileCardLocationTS: #8c7a95;
-$githubProfileCardBorder: #c9748f;
-
-// === BACKGROUNDS (LIGHT) ===
+// --- FONDS (BACKGROUNDS) ---
 $lightBackground1: #ffffff;
-$lightBackground2: #fdf6f9;    // Blanc rosé très doux
-$lightBackground3: #f7edf2;    // Rose crème pâle
+$lightBackground2: #fdfbf7;    // Champagne
+$lightBackground3: #f5eee6;    
+$darkBackground: #1a151b;      
+$blogCardContainerColor: rgba(183, 110, 121, 0.05);
 
-$blogCardContainerColor: rgba(201, 116, 143, 0.05);
+// --- DÉGRADÉS (GRADIENTS) - FIXES GREETING ERROR ---
+$primaryGradient: linear-gradient(135deg, #b76e79 0%, #d4af37 100%);
+$accentGradient: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%);
+$backgroundGradient: linear-gradient(135deg, #fdfbf7 0%, #f5eee6 100%);
 
-// === BACKGROUNDS (DARK) ===
-$darkBackground: #1e1520;      // Prune nuit profond
+// --- OMBRES (SHADOWS) - FIXES BUTTON ERROR ---
+$lightBoxShadow: 0 10px 30px rgba(183, 110, 121, 0.12);
+$lightBoxShadowDark: rgba(183, 110, 121, 0.25);
+$lightBoxShadowDarker: rgba(183, 110, 121, 0.35);
+$darkBoxShadow: 0 10px 30px rgba(183, 110, 121, 0.2);
+$darkBoxShadow2: rgba(212, 175, 55, 0.4); // <-- VARIABLE MANQUANTE AJOUTÉE
 
-// === BOX SHADOWS ===
-$lightBoxShadowDark: rgba(201, 116, 143, 0.25);
-$lightBoxShadow: rgba(155, 107, 158, 0.15);
-$lightBoxShadowDarker: rgba(201, 116, 143, 0.35);
+// --- BORDURES (BORDERS) - FIXES EDUCATION/FOOTER ERROR ---
+$lightBorder1: rgba(183, 110, 121, 0.15); // <-- VARIABLE MANQUANTE AJOUTÉE
+$educationCardBorder: #d4af37;
+$githubProfileCardBorder: #b76e79;
 
-$darkBoxShadow: #c9748f;
-$darkBoxShadow2: #d4a0c0;
-
-// === GRADIENTS ===
-$experienceCardBlurredDivLG: linear-gradient(
-  135deg,
-  rgba(201, 116, 143, 0.95),
-  rgba(155, 107, 158, 0.95)
-);
-$experienceCardBannerLG: linear-gradient(
-  135deg,
-  rgba(201, 116, 143, 0.08),
-  rgba(155, 107, 158, 0.08)
-);
-
-// === GRADIENTS SUPPLÉMENTAIRES ===
-$primaryGradient: linear-gradient(135deg, #c9748f 0%, #9b6b9e 100%);
-$accentGradient: linear-gradient(135deg, #e8a0b4 0%, #d4a0c0 100%);
-$backgroundGradient: linear-gradient(135deg, #c9748f12 0%, #9b6b9e12 100%);
-
-// === BORDERS ===
-$progressBarBackground: #fdf0f4;
-$lightBorder1: rgba(201, 116, 143, 0.2);
-$educationCardBorder: #c9748f;
-
-// === HOVERS ===
-$achievementCertificateCardHoverDark: rgba(201, 116, 143, 0.2);
-$blogCardHoverSmallColor: rgba(155, 107, 158, 0.12);
-$headerHoverBG: rgba(201, 116, 143, 0.08);
-$contactDetailHoverTS: #c9748f;
-
-// === MISC BACKGROUNDS ===
+// --- COMPOSANTS SPÉCIFIQUES ---
+$progressBarBackground: #f5eee6;
 $progressBarSpanBG: $primaryGradient;
-$iconBackground: #c9748f;
+$iconBackground: #b76e79;
+$toggleCheck: #b76e79;
+$toggleSwitchSliderBG: #e5c29f;
+$headerHoverBG: rgba(183, 110, 121, 0.08);
 
-// === HEADER ===
+$experienceCardBlurredDivLG: linear-gradient(135deg, rgba(183, 110, 121, 0.9), rgba(212, 175, 55, 0.9));
+$experienceCardBannerLG: linear-gradient(135deg, rgba(183, 110, 121, 0.1), rgba(212, 175, 55, 0.1));
+$achievementCertificateCardHoverDark: rgba(183, 110, 121, 0.2);
+$blogCardHoverSmallColor: rgba(212, 175, 55, 0.12);
+$contactDetailHoverTS: #b76e79;
+$skillsColor: #8c7a95;
+$appLink: #b76e79;
 $appHeaderBG: transparent;
 
-// === MISC COLORS ===
-$skillsColor: #8c7a95;
-$appLink: #c9748f;
+// --- GITHUB REPO ---
+$githubRepoCardLanguageColorBG: #fdfbf7;
+$githubRepoCardColor: #2d2235;
+$githubRepoCardRepoCardStatsColor: #8c7a95;
+$githubRepoCardRepoNameColor: #b76e79;
+$githubProfileCardLocationTS: #8c7a95;
 
-// === SOCIAL MEDIA ICONS ===
+// --- SOCIAL MEDIA ICONS ---
 $faceBook: #1877f2;
 $linkedin: #0a66c2;
 $github: #181717;
@@ -222,15 +79,8 @@ $stackoverflow: #f48024;
 $instagram: #e4405f;
 $kaggle: #20beff;
 
-// === STATUT/BADGES ===
-$successColor: #6dbf8e;        // Vert sauge doux
-$warningColor: #e8b86d;        // Ambre chaud
-$errorColor: #e07a8a;          // Rouge rosé
-$infoColor: #8ab4d4;           // Bleu poudré
-
-/* ==================== VARIABLES D'UTILISATION ==================== */
-
-// background: $primaryGradient;
-// color: $titleColor;
-// border-color: $primaryColor;
-// box-shadow: 0 4px 20px $lightBoxShadow;
+// --- STATUTS ---
+$successColor: #6dbf8e;
+$warningColor: #e8b86d;
+$errorColor: #e07a8a;
+$infoColor: #8ab4d4;

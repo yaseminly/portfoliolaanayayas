@@ -1,23 +1,93 @@
+/* ==================== SPLASH SCREEN LUXURY STYLE ==================== */
+
 .splash-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fdfbf7; /* Champagne Background */
+  z-index: 9999;
+  transition: background-color 0.4s ease;
+}
+
+.splash-container.dark-mode {
+  background-color: #1a151b; /* Deep Plum Dark Background */
+}
+
+.splash-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .splash-animation-container {
-  height: 50vh;
+  width: 300px;
+  height: 300px;
+  margin-bottom: -40px; /* Rapproche l'animation du texte */
 }
 
 .splash-title-container {
-  font-size: 2.5rem;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: revealText 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
+
+/* Typographie Signature Agustina ou Playfair */
 .splash-title {
-  font-family: "Agustina Regular", cursive;
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 20px;
+  font-family: "Agustina Regular", "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  background: linear-gradient(135deg, #b76e79 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Petite barre de chargement élégante */
+.splash-loader {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin-top: 15px;
+  border-radius: 10px;
+  animation: loadLine 1.8s ease-in-out forwards;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    letter-spacing: 15px;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 2px;
+    filter: blur(0);
+  }
+}
+
+@keyframes loadLine {
+  0% { width: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { width: 120px; opacity: 0.5; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .splash-title {
+    font-size: 2.2rem;
+  }
+  .splash-animation-container {
+    width: 200px;
+    height: 200px;
+  }
 }

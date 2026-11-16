@@ -1,101 +1,39 @@
-@import "../../_globalColor.scss";
-
-.edu-section {
-  padding: 100px 0;
-  background-color: $lightBackground1; // Blanc pur pour contraster avec l'expérience champagne
-  transition: 0.4s ease;
-
-  &.dark-mode {
-    background-color: $darkBackground;
-  }
-}
-
-.edu-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .edu-header {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
+}
 
+.edu-title {
+  margin: 0;
+  color: #f3e8ef;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.edu-divider {
+  width: 48px;
+  height: 3px;
+  margin: 13px auto;
+  background: #bd899f;
+  border-radius: 10px;
+}
+
+.edu-subtitle {
+  color: #c5b2c2;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
   .edu-title {
-    font-family: "Playfair Display", serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: $titleColor;
-    margin-bottom: 15px;
+    font-size: 28px;
   }
 
-  .edu-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    .line {
-      width: 60px;
-      height: 1px;
-      background: $primaryColor; // Rose Gold
-      opacity: 0.4;
-    }
-
-    .diamond {
-      color: $accentColor; // Metallic Gold
-      font-size: 1.2rem;
-    }
-  }
-}
-
-/* PILE DE DIPLÔMES ÉLÉGANTE */
-.edu-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-
-  /* CIBLAGE DE LA CARTE ENFANT */
-  .education-card {
-    background: $lightBackground2 !important; // Fond Champagne léger
-    border: 1px solid rgba($accentColor, 0.1) !important;
-    border-radius: 25px !important; // Bords très arrondis (Girly)
-    padding: 30px 40px !important;
-    width: 100%;
-    box-shadow: $lightBoxShadow !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-
-    &:hover {
-      transform: scale(1.03) !important;
-      border-color: $accentColor !important;
-      box-shadow: 0 15px 35px rgba($primaryColor, 0.1) !important;
-    }
-
-    /* Style du contenu à l'intérieur de la carte */
-    .education-card-school-name {
-      font-family: "Playfair Display", serif;
-      color: $titleColor;
-    }
-    
-    .education-card-duration {
-      color: $primaryColor;
-      font-weight: 700;
-    }
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .edu-title { font-size: 2.5rem !important; }
-  .edu-section { padding: 60px 0; }
-  .edu-divider .line { width: 40px; }
-  .edu-stack .education-card { padding: 25px !important; }
-}
-
-.dark-mode {
-  .edu-title { color: $textColorDark; }
-  .edu-stack .education-card {
-    background: lighten($darkBackground, 4%) !important;
-    border-color: rgba($primaryColor, 0.1) !important;
+  .edu-header {
+    margin-bottom: 25px;
   }
 }

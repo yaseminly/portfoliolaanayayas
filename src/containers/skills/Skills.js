@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./Skills.scss";
 import { skillsSection } from "../../portfolio";
@@ -7,54 +8,114 @@ import StyleContext from "../../contexts/StyleContext";
 export default function Skills() {
   const { isDark } = useContext(StyleContext);
 
-  if (!skillsSection.display) {
-    return null;
-  }
+  if (!skillsSection.display) return null;
 
   return (
-    <div className={isDark ? "dark-mode skills-main-div" : "skills-main-div"} id="skills">
-      <Fade bottom duration={1000} distance="40px">
-        <div className="skills-container">
-          
-          {/* HEADER DE SECTION */}
-          <div className="skills-header">
-            <h1 className="skills-heading">Expertises Techniques</h1>
-            <div className="skills-underline"></div>
-          </div>
+    <section
+      className={
+        isDark
+          ? "skills-main-div dark-mode"
+          : "skills-main-div"
+      }
+      id="skills"
+    >
+      <div className="skills-container">
 
-          {/* GRILLE DE CATÉGORIES */}
-          {skillsSection.softwareSkills && skillsSection.softwareSkills.length > 0 && (
-            <div className="skills-grid">
-              {skillsSection.softwareSkills.map((category, i) => (
-                <Fade bottom duration={1000} delay={i * 150} key={i}>
-                  <div className="skill-category-card">
-                    
-                    {/* HEADER DE LA CARTE (ICÔNE + NOM) */}
+        {/* Section header */}
+        <Fade bottom duration={800}>
+          <div className="skills-header">
+            <h2 className="skills-heading">
+              {skillsSection.title}
+            </h2>
+
+            <div className="skills-underline" />
+
+            {skillsSection.subTitle && (
+              <p className="skills-subtitle">
+                {skillsSection.subTitle}
+              </p>
+            )}
+          </div>
+        </Fade>
+
+        {/* Key strengths */}
+        {skillsSection.skills?.length > 0 && (
+          <div className="skills-descriptions">
+            {skillsSection.skills.map((skill, index) => (
+              <Fade
+                bottom
+                duration={700}
+                delay={index * 80}
+                key={index}
+              >
+                <div className="skill-phrase-card">
+                  <span className="skill-phrase-dot" />
+                  <span className="skill-phrase-text">
+                    {skill}
+                  </span>
+                </div>
+              </Fade>
+            ))}
+          </div>
+        )}
+
+        {/* Technical skills */}
+        {skillsSection.softwareSkills?.length > 0 && (
+          <div className="skills-grid">
+            {skillsSection.softwareSkills.map((category, index) => {
+              const categorySkills = category.skills || [];
+
+              return (
+                <Fade
+                  bottom
+                  duration={800}
+                  delay={index * 100}
+                  key={category.category || index}
+                >
+                  <article className="skill-category-card">
+
                     <div className="skill-category-header">
                       <div className="skill-category-icon-box">
-                        <i className={category.skills[0]?.fontAwesomeClassname || "fas fa-code"}></i>
+                        <i
+                          className={
+                            categorySkills[0]?.fontAwesomeClassname ||
+                            "fas fa-code"
+                          }
+                          aria-hidden="true"
+                        />
                       </div>
+
                       <h3 className="skill-category-name">
                         {category.category}
                       </h3>
                     </div>
 
-                    {/* LISTE DES ITEMS (TAGS) */}
                     <div className="skill-category-items">
-                      {category.skills.map((skill, j) => (
-                        <div className="skill-item-tag" key={j}>
-                          <i className={skill.fontAwesomeClassname}></i>
+                      {categorySkills.map((skill, skillIndex) => (
+                        <span
+                          className="skill-item-tag"
+                          key={skill.skillName || skillIndex}
+                        >
+                          {skill.fontAwesomeClassname && (
+                            <i
+                              className={skill.fontAwesomeClassname}
+                              aria-hidden="true"
+                            />
+                          )}
+
                           <span>{skill.skillName}</span>
-                        </div>
+                        </span>
                       ))}
                     </div>
-                  </div>
+
+                  </article>
                 </Fade>
-              ))}
-            </div>
-          )}
-        </div>
-      </Fade>
-    </div>
+              );
+            })}
+          </div>
+        )}
+
+      </div>
+    </section>
   );
 }

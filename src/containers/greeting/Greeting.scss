@@ -1,186 +1,342 @@
-@import "../../_globalColor.scss";
 
-.greet-main {
-  min-height: 85vh;
-  padding: 120px 0 60px;
-  background: $lightBackground2; // Champagne
-  display: flex;
-  align-items: center;
+.hero-section {
+  background: linear-gradient(145deg, #1c1520 0%, #241a29 100%);
+  color: #f3e8ef;
+  min-height: 690px;
+  padding: 85px 7% 45px;
+  position: relative;
+  overflow: hidden;
 }
 
-.greeting-container {
+.hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 65px;
+  min-height: 490px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+/* Petit texte introductif */
+.hero-eyebrow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-
-  @media (max-width: 1024px) {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-}
-
-/* --- TEXTE DE PRÉSENTATION --- */
-.greeting-text-div {
-  flex: 1.2;
-
-  .greeting-badge {
-    font-family: "Montserrat", sans-serif;
-    color: $primaryColor; // Rose Gold
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
-    display: inline-block;
-  }
-
-  .greeting-title {
-    font-family: "Agustina Regular", cursive; // Ta signature
-    font-size: 4.5rem;
-    background: $primaryGradient; // Rose Gold vers Or
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 5px;
-
-    @media (max-width: 768px) {
-      font-size: 3rem;
-    }
-  }
-
-  .specialization-text {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    color: $titleColor;
-    font-weight: 600;
-    margin-bottom: 25px;
-
-    .text-gold {
-      color: $accentColor;
-      border-bottom: 2px solid rgba($accentColor, 0.3);
-    }
-  }
-
-  .greeting-subTitle {
-    font-family: "Montserrat", sans-serif;
-    color: $textColor;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    max-width: 600px;
-    margin-bottom: 40px;
-
-    @media (max-width: 1024px) {
-      margin: 0 auto 40px;
-    }
-  }
-}
-
-/* --- BOUTONS LUXE --- */
-.greeting-actions {
-  .button-group {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
-
-    @media (max-width: 1024px) {
-      justify-content: center;
-    }
-  }
-}
-
-.btn-luxury-primary {
-  background: $primaryGradient;
-  color: white !important;
-  padding: 15px 35px;
-  border-radius: 50px;
+  gap: 10px;
+  color: #c5b2c2;
+  font-size: 10px;
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
-  box-shadow: 0 10px 20px rgba($primaryColor, 0.25);
+  letter-spacing: 2.2px;
+  margin-bottom: 28px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d5a08f;
+  box-shadow: 0 0 12px rgba(213, 160, 143, 0.5);
+}
+
+/* Titre principal */
+.hero-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(42px, 5.3vw, 70px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+  margin: 0 0 28px;
+  color: #f3e8ef;
+
+  span {
+    color: #d5a08f;
+    font-style: italic;
+  }
+}
+
+/* Description */
+.hero-description {
+  color: #e0d2dc;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 570px;
+  margin-bottom: 13px;
+}
+
+.hero-description-secondary {
+  color: #c5b2c2;
+  font-size: 13px;
+}
+
+/* Compétences sous forme de tags */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 27px 0 32px;
+
+  span {
+    border: 1px solid rgba(213, 160, 143, 0.3);
+    border-radius: 30px;
+    padding: 9px 15px;
+    color: #e0d2dc;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    background: rgba(255, 255, 255, 0.045);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(189, 137, 159, 0.15);
+      border-color: #bd899f;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Boutons */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-button-primary,
+.hero-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Consulter mon CV */
+.hero-button-primary {
+  background: linear-gradient(135deg, #bd899f, #d5a08f);
+  color: #261c29 !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 7px 20px rgba(189, 137, 159, 0.22);
+
+  span {
+    color: #261c29 !important;
+    font-size: 15px;
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba($primaryColor, 0.4);
-    filter: brightness(1.1);
+    background: linear-gradient(135deg, #e0b3c3, #e8c2ad);
+    color: #261c29 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(189, 137, 159, 0.32);
   }
 }
 
-.btn-luxury-outline {
-  border: 2px solid $accentColor;
-  color: $accentColor !important;
-  padding: 13px 35px;
-  border-radius: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
+/* Bouton secondaire */
+.hero-button-secondary {
+  background: transparent;
+  border: 1px solid #bd899f;
+  color: #f3e8ef !important;
 
   &:hover {
-    background: rgba($accentColor, 0.05);
-    transform: translateY(-5px);
+    background: rgba(189, 137, 159, 0.15);
+    border-color: #e0b3c3;
+    color: #ffffff !important;
+    transform: translateY(-3px);
   }
 }
 
-/* --- PHOTO DE PROFIL ÉLÉGANTE --- */
-.greeting-image-div {
-  flex: 0.8;
+/* Réseaux sociaux */
+.hero-socials {
+  margin-top: 28px;
+
+  a {
+    color: #c5b2c2;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #e0b3c3;
+    }
+  }
+}
+
+/* Image */
+.hero-visual {
+  position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  .photo-frame {
-    position: relative;
-    width: 350px;
-    height: 450px;
+.hero-image-wrapper {
+  position: relative;
+  width: min(100%, 370px);
+  height: 430px;
+}
 
-    @media (max-width: 768px) {
-      width: 250px;
-      height: 320px;
-    }
+.hero-image-background {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #694568, #a87591);
+  border-radius: 48% 48% 12px 12px;
+  opacity: 0.85;
+}
 
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 48% 48% 12px 12px;
+  display: block;
+  filter: saturate(0.88);
+}
 
-    .frame-border {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100%;
-      height: 100%;
-      border: 3px solid $accentColor; // Or
-      border-radius: 20px;
-      z-index: 1;
-    }
+/* Texte sur l'image */
+.hero-image-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 10px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
+}
 
-    .frame-accent {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      background: $backgroundGradient;
-      border-radius: 50%;
-      z-index: 0;
-      opacity: 0.5;
-    }
+/* Petite carte flottante */
+.hero-floating-note {
+  position: absolute;
+  right: -10px;
+  bottom: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #352937;
+  border: 1px solid rgba(213, 160, 143, 0.25);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  color: #e0d2dc;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.note-star {
+  color: #d5a08f;
+  font-size: 25px;
+}
+
+/* Texte inférieur */
+.hero-bottom-label {
+  max-width: 1200px;
+  margin: 35px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #c5b2c2;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.hero-line {
+  height: 1px;
+  width: 65px;
+  background: rgba(213, 160, 143, 0.45);
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 65px 6% 40px;
+  }
+
+  .hero-container {
+    gap: 35px;
+  }
+
+  .hero-image-wrapper {
+    height: 360px;
+  }
+
+  .hero-floating-note {
+    right: -5px;
   }
 }
 
-/* DARK MODE */
-.dark-mode {
-  &.greet-main { background: $darkBackground; }
-  .specialization-text { color: $textColorDark; }
-  .greeting-subTitle { color: rgba($textColorDark, 0.8); }
+/* Mobiles */
+@media (max-width: 700px) {
+  .hero-section {
+    padding: 55px 22px 35px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero-title {
+    font-size: 47px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    padding: 10px 15px 25px;
+  }
+
+  .hero-image-wrapper {
+    width: min(85%, 330px);
+    height: 380px;
+  }
+
+  .hero-floating-note {
+    right: 0;
+    bottom: 40px;
+  }
+
+  .hero-bottom-label {
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    gap: 11px;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    padding: 13px 20px;
+    font-size: 11px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 39px;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    padding: 12px 16px;
+    font-size: 10px;
+  }
 }

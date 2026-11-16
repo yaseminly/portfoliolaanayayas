@@ -1,139 +1,149 @@
+
 @import "../../_globalColor.scss";
 
 .contact-section {
-  padding: 100px 0;
-  background-color: $lightBackground2; // Fond Champagne
-  transition: all 0.4s ease;
-
-  &.dark-mode {
-    background-color: $darkBackground;
-  }
+  background: #f8f5f0;
+  padding: 65px 25px 25px;
+  transition: background 0.3s ease;
 }
 
 .contact-container {
-  max-width: 800px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* CARTE DE CONTACT "BOUTIQUE" */
-.contact-card {
-  background: white;
-  padding: 60px 40px;
-  border-radius: 30px;
   text-align: center;
-  box-shadow: $lightBoxShadow;
-  border: 1px solid rgba($accentColor, 0.15);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: $accentColor;
-  }
 }
 
 .contact-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
 
-  .contact-title {
-    font-family: "Playfair Display", serif;
-    font-size: 3rem;
-    color: $titleColor;
-    margin-bottom: 10px;
-  }
+.contact-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #b47e6d;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
 
-  .title-underline {
-    width: 60px;
-    height: 3px;
-    background: $primaryGradient;
-    margin: 0 auto 20px;
-    border-radius: 5px;
-  }
+.contact-title {
+  margin: 0 0 10px;
+  color: #29252b;
+  font-size: 2rem;
+  font-weight: 600;
+}
 
-  .contact-subtitle {
-    font-family: "Montserrat", sans-serif;
-    color: $textColor;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
+.contact-subtitle {
+  margin: 0;
+  color: #817982;
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 .contact-info-list {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  margin: 30px 0;
 }
 
 .contact-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 15px;
-  color: $textColor;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  gap: 9px;
+  color: #514a53;
+  font-size: 0.84rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
 
-  .icon-box {
-    width: 45px;
-    height: 45px;
-    background: $lightBackground3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    color: $primaryColor; // Rose Gold
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+  i {
+    color: #b47e6d;
+    font-size: 0.9rem;
   }
 
   &:hover {
-    color: $primaryColor;
-    .icon-box {
-      background: $primaryGradient;
-      color: white;
-      transform: rotate(10deg);
-    }
+    color: #b47e6d;
   }
-}
-
-.email-link {
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: rgba($primaryColor, 0.05);
-  border: 1px solid rgba($primaryColor, 0.1);
 }
 
 .contact-social {
   margin-top: 30px;
-  padding-top: 30px;
-  border-top: 1px solid $lightBorder1;
 
-  .social-text {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: $cardSubtitle;
-    margin-bottom: 20px;
-    font-weight: 700;
+  p {
+    margin-bottom: 12px;
+    color: #817982;
+    font-size: 0.75rem;
   }
 }
 
-/* DARK MODE */
-.dark-mode {
-  .contact-card {
-    background: lighten($darkBackground, 5%);
-    border-color: rgba($primaryColor, 0.1);
-  }
-  .contact-title { color: $textColorDark; }
-  .contact-subtitle, .contact-item { color: rgba($textColorDark, 0.8); }
-  .icon-box { background: rgba(255,255,255,0.05); }
-  .email-link { background: rgba(255,255,255,0.03); }
+.contact-social .social-media-div {
+  justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .contact-card { padding: 40px 20px; }
-  .contact-title { font-size: 2.2rem !important; }
+.contact-footer {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(80, 65, 75, 0.12);
+  color: #9a9299;
+  font-size: 0.7rem;
+}
+
+/* Dark mode */
+
+.contact-section.dark-mode {
+  background: #29252b;
+
+  .contact-title {
+    color: #f8f5f0;
+  }
+
+  .contact-subtitle,
+  .contact-social p,
+  .contact-footer {
+    color: #bdb4bf;
+  }
+
+  .contact-item {
+    color: #eee8ef;
+
+    i {
+      color: #d5a18e;
+    }
+
+    &:hover {
+      color: #d5a18e;
+    }
+  }
+
+  .contact-footer {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 48px 18px 20px;
+  }
+
+  .contact-title {
+    font-size: 1.65rem;
+  }
+
+  .contact-info-list {
+    flex-direction: column;
+    gap: 17px;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 28px auto;
+  }
+
+  .contact-item {
+    font-size: 0.78rem;
+  }
+
+  .contact-footer {
+    margin-top: 30px;
+  }
 }

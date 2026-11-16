@@ -1,7 +1,16 @@
 @import "../_globalColor";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
 .dark-mode {
   background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  color: $textColorDark;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
 }

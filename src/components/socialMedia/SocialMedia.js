@@ -1,110 +1,82 @@
+
 import React from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import { socialMediaLinks } from "../../portfolio";
 
-export default function socialMedia() {
+export default function SocialMedia() {
   if (!socialMediaLinks.display) {
     return null;
   }
+
+  const links = [
+    {
+      url: socialMediaLinks.github,
+      label: "GitHub",
+      className: "github",
+      icon: "fab fa-github"
+    },
+    {
+      url: socialMediaLinks.linkedin,
+      label: "LinkedIn",
+      className: "linkedin",
+      icon: "fab fa-linkedin-in"
+    },
+    {
+      url: socialMediaLinks.gmail,
+      label: "E-mail",
+      className: "google",
+      icon: "fas fa-envelope",
+      email: true
+    },
+    {
+      url: socialMediaLinks.instagram,
+      label: "Instagram",
+      className: "instagram",
+      icon: "fab fa-instagram"
+    },
+    {
+      url: socialMediaLinks.twitter,
+      label: "Twitter",
+      className: "twitter",
+      icon: "fab fa-twitter"
+    },
+    {
+      url: socialMediaLinks.medium,
+      label: "Medium",
+      className: "medium",
+      icon: "fab fa-medium"
+    },
+    {
+      url: socialMediaLinks.stackoverflow,
+      label: "Stack Overflow",
+      className: "stack-overflow",
+      icon: "fab fa-stack-overflow"
+    },
+    {
+      url: socialMediaLinks.kaggle,
+      label: "Kaggle",
+      className: "kaggle",
+      icon: "fab fa-kaggle"
+    }
+  ];
+
   return (
     <div className="social-media-div">
-      {socialMediaLinks.github ? (
-        <a
-          href={socialMediaLinks.github}
-          className="icon-button github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.linkedin ? (
-        <a
-          href={socialMediaLinks.linkedin}
-          className="icon-button linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin-in"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.gmail ? (
-        <a
-          href={`mailto:${socialMediaLinks.gmail}`}
-          className="icon-button google"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fas fa-envelope"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-
-
-      {socialMediaLinks.instagram ? (
-        <a
-          href={socialMediaLinks.instagram}
-          className="icon-button instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-instagram"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.twitter ? (
-        <a
-          href={socialMediaLinks.twitter}
-          className="icon-button twitter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.medium ? (
-        <a
-          href={socialMediaLinks.medium}
-          className="icon-button medium"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-medium"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.stackoverflow ? (
-        <a
-          href={socialMediaLinks.stackoverflow}
-          className="icon-button stack-overflow"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-stack-overflow"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.kaggle ? (
-        <a
-          href={socialMediaLinks.kaggle}
-          className="icon-button kaggle"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-kaggle"></i>
-          <span></span>
-        </a>
-      ) : null}
+      {links
+        .filter(link => link.url)
+        .map(link => (
+          <a
+            key={link.label}
+            href={link.email ? `mailto:${link.url}` : link.url}
+            className={`icon-button ${link.className}`}
+            aria-label={link.label}
+            title={link.label}
+            target={link.email ? undefined : "_blank"}
+            rel={link.email ? undefined : "noopener noreferrer"}
+          >
+            <i className={link.icon} aria-hidden="true"></i>
+          </a>
+        ))}
     </div>
   );
 }

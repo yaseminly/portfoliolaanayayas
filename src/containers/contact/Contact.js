@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
@@ -8,57 +9,62 @@ import StyleContext from "../../contexts/StyleContext";
 export default function Contact() {
   const { isDark } = useContext(StyleContext);
 
+  if (!contactInfo.display) return null;
+
   return (
-    <Fade bottom duration={1000} distance="40px">
-      <div className={isDark ? "dark-mode contact-section" : "contact-section"} id="contact">
+    <Fade bottom duration={800} distance="20px">
+      <section
+        className={`contact-section ${isDark ? "dark-mode" : ""}`}
+        id="contact"
+      >
         <div className="contact-container">
-          
-          <div className="contact-card">
-            {/* EN-TÊTE */}
-            <div className="contact-header">
-              <h1 className="contact-title">{contactInfo.title}</h1>
-              <div className="title-underline"></div>
-              <p className="contact-subtitle">{contactInfo.subtitle}</p>
-            </div>
-
-            {/* DÉTAILS DE CONTACT */}
-            <div className="contact-content">
-              
-              <div className="contact-info-list">
-                {/* 📍 Localisation */}
-                {contactInfo.location && (
-                  <div className="contact-item">
-                    <div className="icon-box">
-                      <i className="fas fa-map-marker-alt"></i>
-                    </div>
-                    <p>{contactInfo.location}</p>
-                  </div>
-                )}
-
-                {/* 📧 Email avec effet Glass */}
-                {contactInfo.email_address && (
-                  <a
-                    className="contact-item email-link"
-                    href={`mailto:${contactInfo.email_address}`}
-                  >
-                    <div className="icon-box">
-                      <i className="fas fa-envelope"></i>
-                    </div>
-                    <span>{contactInfo.email_address}</span>
-                  </a>
-                )}
-              </div>
-
-              {/* RÉSEAUX SOCIAUX */}
-              <div className="contact-social">
-                <p className="social-text">Retrouvez-moi sur les réseaux</p>
-                <SocialMedia />
-              </div>
-            </div>
+          <div className="contact-header">
+            <span className="contact-eyebrow">CONTACT</span>
+            <h1 className="contact-title">{contactInfo.title}</h1>
+            <p className="contact-subtitle">{contactInfo.subtitle}</p>
           </div>
 
+          <div className="contact-info-list">
+            {contactInfo.email_address && (
+              <a
+                className="contact-item"
+                href={`mailto:${contactInfo.email_address}`}
+              >
+                <i className="fas fa-envelope"></i>
+                <span>{contactInfo.email_address}</span>
+              </a>
+            )}
+
+            {(contactInfo.phone_number || contactInfo.number) && (
+              <a
+                className="contact-item"
+                href={`tel:${contactInfo.phone_number || contactInfo.number}`}
+              >
+                <i className="fas fa-phone-alt"></i>
+                <span>
+                  {contactInfo.phone_number || contactInfo.number}
+                </span>
+              </a>
+            )}
+
+            {contactInfo.location && (
+              <div className="contact-item">
+                <i className="fas fa-map-marker-alt"></i>
+                <span>{contactInfo.location}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="contact-social">
+            <p>Retrouvez-moi également sur</p>
+            <SocialMedia />
+          </div>
+
+          <div className="contact-footer">
+            © {new Date().getFullYear()} — Tous droits réservés.
+          </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

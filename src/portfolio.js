@@ -17,7 +17,7 @@ const greeting = {
   username: "Yasmine Laanaya",
   title: "Yasmine — Software Engineer | AI, ERP & DevOps Expert",
   subTitle: emoji(
-    "Ingénieure Logiciel spécialisée MIAGE. Expertise pointue en intégration ERP/CRM, conception d'architectures IA (RAG) et orchestration DevOps pour des solutions industrielles performantes."
+     "Ingénieure Logiciel spécialisée MIAGE. Expertise en intégration ERP/CRM, architectures IA (RAG) et programmation SQL/PL-SQL. Je conçois des solutions full-stack (Java/Spring Boot, Angular) performantes en intégrant nativement la culture DevOps (Docker, CI/CD)."
   ),
   displayGreeting: true
 };
@@ -31,68 +31,81 @@ const socialMediaLinks = {
 };
 
 /* ==================== ABOUT ME ==================== */
+
 const aboutSection = {
   display: true,
   title: "À propos de moi",
-  description: `
-Ingénieure en Informatique spécialisée MIAGE, je maîtrise la conception d'architectures logicielles complexes alliant performance technique et vision métier.
-
-Forte d'une solide expertise en développement Full Stack avec **Java (Spring Boot)**, **React** et **Angular**, je me spécialise dans l'intégration de solutions **ERP/CRM** (Odoo, Sage) et le déploiement d'**IA Générative** (RAG, LangChain). Mon approche intègre nativement la culture **DevOps** (CI/CD, Docker, Monitoring) pour garantir des cycles de livraison fluides et une qualité industrielle.
-
-💫 Mon crédo : Transformer des besoins métiers complexes en solutions technologiques intelligentes et scalables.`,
-  image: require("./assets/images/moi.jpeg"),
+  subtitle: "Un profil polyvalent, entre technologie et métier.",
+  description:
+    "Mon parcours m’a permis d’explorer plusieurs domaines complémentaires : développement d’applications, intégration de solutions CRM/BSS, intelligence artificielle et analyse de données. Mes expériences chez Inetum, JESA et Orange Maroc m’ont appris à travailler sur des problématiques concrètes, à découvrir de nouvelles technologies et à transformer des besoins métier en solutions digitales. Curieuse et motivée par l’apprentissage continu, je souhaite continuer à évoluer sur des projets à forte valeur ajoutée.",
+  image: require("./assets/images/moi.jpeg")
 };
 
+
 /* ==================== SKILLS SECTION ==================== */
+
+
 const skillsSection = {
-  title: "Expertises Stratégiques",
-  subTitle: "Un profil hybride alliant excellence technique et vision processus métier.",
+  title: "Mes expertises",
+  subTitle: "Des compétences techniques au service des besoins métier.",
+  display: true,
+
   skills: [
-    emoji("🏢 Architectures ERP/CRM : Maîtrise des flux métiers, paramétrage Odoo 17, Sage et modélisation de catalogues complexes via CPML."),
-    emoji("🧠 Intelligence Artificielle : Conception de pipelines RAG (Retrieval-Augmented Generation), intégration de LLMs et automatisation via LangChain."),
-    emoji("♾️ DevOps & Qualimétrie : Automatisation CI/CD (GitLab), conteneurisation Docker, audit SonarCloud et monitoring proactif via Grafana."),
-    emoji("💻 Excellence Full Stack : Développement d'applications robustes avec Java (Spring Boot), Angular 16+, React et architectures Micro-services."),
-    emoji("📊 Data Intelligence : Analyse de KPIs critiques, reporting décisionnel via Power BI et optimisation de bases de données SQL/PostgreSQL."),
+    "Développement d'applications web et logiciel",
+    "Intégration et paramétrage de solutions ERP / CRM",
+    "Conception d'assistants IA et architectures RAG",
+    "Analyse de données et création de tableaux de bord BI",
+    "Conteneurisation, Cloud et pratiques DevOps"
   ],
+
   softwareSkills: [
     {
-      category: "Solutions Métiers (ERP/CRM)",
+      category: "Développement",
       skills: [
-        { skillName: "Odoo 17", fontAwesomeClassname: "fas fa-briefcase" },
-        { skillName: "Sage", fontAwesomeClassname: "fas fa-file-invoice-dollar" },
-        { skillName: "CRM CPML (PIM, PC, TUM)", fontAwesomeClassname: "fas fa-users-cog" },
-        { skillName: "Power BI / Reporting", fontAwesomeClassname: "fas fa-chart-bar" },
-      ],
+        {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
+        {skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf"},
+        {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
+        {skillName: "C# / .NET", fontAwesomeClassname: "fas fa-code"},
+        {skillName: "React", fontAwesomeClassname: "fab fa-react"},
+        {skillName: "Angular", fontAwesomeClassname: "fab fa-angular"},
+        {skillName: "JavaScript / TypeScript", fontAwesomeClassname: "fab fa-js"}
+      ]
     },
     {
-      category: "Backend Development",
+      category: "ERP / CRM & Bases de données",
       skills: [
-        { skillName: "Java / Spring Boot", fontAwesomeClassname: "fab fa-java" },
-        { skillName: "C# / .NET Core / ASP.NET", fontAwesomeClassname: "fab fa-windows" },
-        { skillName: "Python / Django", fontAwesomeClassname: "fab fa-python" },
-        { skillName: "PHP / SQL / PostgreSQL", fontAwesomeClassname: "fab fa-php" },
-      ],
+        {skillName: "Odoo", fontAwesomeClassname: "fas fa-cubes"},
+        {skillName: "Sage X3", fontAwesomeClassname: "fas fa-cogs"},
+        {skillName: "CRM / BSS", fontAwesomeClassname: "fas fa-project-diagram"},
+        {skillName: "SQL Server", fontAwesomeClassname: "fas fa-database"},
+        {skillName: "MySQL", fontAwesomeClassname: "fas fa-database"},
+        {skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database"}
+      ]
     },
     {
-      category: "Frontend & Mobile",
+      category: "Data & Intelligence Artificielle",
       skills: [
-        { skillName: "React / Next.js", fontAwesomeClassname: "fab fa-react" },
-        { skillName: "Angular 16+", fontAwesomeClassname: "fab fa-angular" },
-        { skillName: "TypeScript / JavaScript", fontAwesomeClassname: "fab fa-js" },
-        { skillName: "Dart / Flutter", fontAwesomeClassname: "fas fa-mobile-alt" },
-      ],
+        {skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar"},
+        {skillName: "RAG", fontAwesomeClassname: "fas fa-brain"},
+        {skillName: "LangChain", fontAwesomeClassname: "fas fa-link"},
+        {skillName: "ChromaDB", fontAwesomeClassname: "fas fa-database"},
+        {skillName: "Ollama", fontAwesomeClassname: "fas fa-robot"},
+        {skillName: "Machine Learning", fontAwesomeClassname: "fas fa-chart-line"}
+      ]
     },
     {
-      category: "IA, DevOps & Qualité",
+      category: "DevOps & Cloud",
       skills: [
-        { skillName: "IA Générative / RAG", fontAwesomeClassname: "fas fa-brain" },
-        { skillName: "Docker / Kubernetes", fontAwesomeClassname: "fab fa-docker" },
-        { skillName: "CI/CD / GitLab", fontAwesomeClassname: "fab fa-gitlab" },
-        { skillName: "Grafana / SonarCloud", fontAwesomeClassname: "fas fa-chart-line" },
-      ],
+        {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
+        {skillName: "Git", fontAwesomeClassname: "fab fa-git-alt"},
+        {skillName: "CI/CD", fontAwesomeClassname: "fas fa-sync-alt"},
+        {skillName: "Azure", fontAwesomeClassname: "fas fa-cloud"},
+        {skillName: "Oracle Cloud", fontAwesomeClassname: "fas fa-server"}
+      ]
     }
-  ],
-  display: true}
+  ]
+};
+
 
 /* ==================== EDUCATION ==================== */
 const educationInfo = {
@@ -115,43 +128,65 @@ const educationInfo = {
 };
 
 /* ==================== EXPERIENCE ==================== */
+
 const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Ingénieure Logiciel & DevOps (Stagiaire PFE)",
+      role: "Développement & Intégration – PFE",
       company: "Inetum",
       companylogo: require("./assets/images/inetum.png"),
       date: "Février – Août 2026",
-      desc: "Pilotage sur le projet CRM (Télécom) : Modélisation de catalogues complexes via CPML (Modules PIM, PC, TUM, BR). Projet DTS : Architecture Full Stack Angular/Spring Boot. Automatisation d'ingestion de données (Java/Apache POI). Stratégie de Qualité : Tests E2E, Sanity Checks, Non-régression (Mockito/JUnit 5), monitoring Grafana et audit continu SonarCloud.",
-      skills: ["CRM Télécom", "CPML", "DevOps", "Grafana", "Spring Boot", "Angular", "QA Testing"]
+      desc:
+        "Participation au développement d'une solution de suivi des ventes et à l'intégration d'une solution CRM/BSS dans un environnement télécom.",
+      descBullets: [
+        "Développement d'une application de gestion des ventes libres et des ventes à recharges avec Angular, Spring Boot et MySQL.",
+        "Contribution à l'intégration CRM/BSS : configuration, paramétrage et réalisation de tests fonctionnels.",
+        "Participation aux phases de déploiement en collaboration avec l'équipe technique et DevOps."
+      ]
     },
     {
-      role: "Ingénieure IA & Knowledge Assistant",
+      role: "Développement IA & Knowledge Assistant",
       company: "JESA",
       companylogo: require("./assets/images/jesa1.png"),
       date: "Juillet – Septembre 2025",
-      desc: "Transformation de la base SharePoint en moteur de connaissance intelligent via une architecture RAG, LangChain et chainlit pour des recherches sémantiques contextuelles.",
-      skills: ["Python", "LangChain", "LLM", "RAG", "NLP"]
+      desc:
+        "Contribution à la conception d'un assistant intelligent permettant d'interroger des documents internes en langage naturel.",
+      descBullets: [
+        "Mise en place d'une architecture RAG pour la recherche contextuelle dans les documents.",
+        "Développement du backend avec Python et FastAPI et de l'interface avec React et TypeScript.",
+        "Utilisation de ChromaDB pour la recherche vectorielle et de SQL Server pour le stockage des données.",
+        "Intégration d'un modèle de langage local avec Ollama."
+      ]
     },
     {
-      role: "Analyste BI & Reporting",
+      role: "BI & Reporting",
       company: "Orange Maroc",
       companylogo: require("./assets/images/orange.png"),
       date: "Juillet 2024",
-      desc: "Optimisation du pilotage B2B par la création de dashboards Power BI complexes et l'automatisation de l'analyse des KPIs d'ingénierie.",
-      skills: ["Power BI", "Data Analysis", "SQL", "KPI Optimization"]
+      desc:
+        "Participation aux activités de Business Intelligence et au suivi des indicateurs de performance de l'activité B2B.",
+      descBullets: [
+        "Création et amélioration de tableaux de bord avec Power BI.",
+        "Analyse et suivi des KPI pour faciliter le pilotage de l'activité.",
+        "Exploitation des données pour produire des rapports de suivi."
+      ]
     },
     {
       role: "Stagiaire Informatique",
       company: "GSMAG / Essanet Maroc",
       companylogo: require("./assets/images/essan.png"),
       date: "Juillet 2023",
-      desc: "Prise en main et exploitation du logiciel interne — Compréhension des flux métiers et exécution de tâches opérationnelles..",
-      skills: ["Sage", "Business Flows", "ERP Management", "SQL"]
-    },
+      desc:
+        "Découverte d'un environnement informatique professionnel et prise en main d'un logiciel interne.",
+      descBullets: [
+        "Découverte des fonctionnalités du logiciel et de son utilisation dans les activités quotidiennes.",
+        "Familiarisation avec les processus et les flux métier de l'entreprise."
+      ]
+    }
   ]
 };
+
 
 /* ==================== PROJECTS ==================== */
 const bigProjects = {
@@ -262,6 +297,7 @@ footerLink: [{ name: "Vérifier", url: "https://www.coursera.org/account/accompl
 ],
 display: true
 };
+
 /* ==================== LANGUAGES ==================== */
 const languages = {
   display: true,
@@ -280,7 +316,10 @@ const contactInfo = {
   title: emoji("Contactez-moi ☎️"),
   subtitle: "À l'écoute d'opportunités ambitieuses en Ingénierie Logicielle, IA et SI.",
   email_address: "yasminelaanayapro@gmail.com",
+  phone_number: "+212 6 94 37 37 12",
+  number: "+212 6 94 37 37 12", // Ajouté pour garantir l'affichage selon le template
   location: "Casablanca, Maroc",
+  display: true
 };
 
 /* ==================== CV SECTION ==================== */
@@ -288,9 +327,9 @@ const resumeSection = {
   title: "Parcours Complet",
   subtitle: "Consulter mon CV détaillé en PDF.",
   display: true,
-  // Ajoute process.env.PUBLIC_URL pour être sûre que React trouve le chemin
   downloadLink: process.env.PUBLIC_URL + "/CV2026.pdf" 
 };
+
 const twitterDetails = {
   userName: "YasmineLaanaya",
   display: false

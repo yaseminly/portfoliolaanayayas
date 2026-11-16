@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./Education.scss";
 import EducationCard from "../../components/educationCard/EducationCard";
@@ -11,25 +12,47 @@ export default function Education() {
   if (!educationInfo.display) return null;
 
   return (
-    <div className={isDark ? "dark-mode edu-section" : "edu-section"} id="education">
-      <Fade bottom duration={1000} distance="30px">
-        <div className="edu-container">
-          <div className="edu-header">
-            <h1 className="edu-title">Formation Académique</h1>
-            <div className="edu-divider">
-              <span className="line"></span>
-              <span className="diamond">✦</span>
-              <span className="line"></span>
-            </div>
-          </div>
+    <section
+      className={
+        isDark
+          ? "edu-section dark-mode"
+          : "edu-section"
+      }
+      id="education"
+    >
+      <div className="edu-container">
 
-          <div className="edu-stack">
-            {educationInfo.schools.map((school, index) => (
-              <EducationCard key={index} school={school} isDark={isDark} />
-            ))}
+        <Fade bottom duration={800}>
+          <div className="edu-header">
+            <h2 className="edu-title">
+              Formation Académique
+            </h2>
+
+            <div className="edu-divider" />
+
+            <p className="edu-subtitle">
+              Mon parcours académique et mes formations
+            </p>
           </div>
+        </Fade>
+
+        <div className="edu-stack">
+          {educationInfo.schools.map((school, index) => (
+            <Fade
+              bottom
+              duration={800}
+              delay={index * 120}
+              key={index}
+            >
+              <EducationCard
+                school={school}
+                isDark={isDark}
+              />
+            </Fade>
+          ))}
         </div>
-      </Fade>
-    </div>
+
+      </div>
+    </section>
   );
 }

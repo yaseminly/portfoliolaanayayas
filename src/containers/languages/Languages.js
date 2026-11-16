@@ -1,27 +1,47 @@
-import React from "react";
+
+import React, { useContext } from "react";
 import "./Languages.scss";
 import { Fade } from "react-reveal";
 import { languages } from "../../portfolio";
+import StyleContext from "../../contexts/StyleContext";
 
 export default function Languages() {
+  const { isDark } = useContext(StyleContext);
+
   if (!languages.display) return null;
 
   return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="languages">
-        <div className="languages-main-div">
-          <h1 className="languages-heading">{languages.title}</h1>
-          <div className="languages-grid">
+    <section
+      className={
+        isDark
+          ? "languages-section dark-mode"
+          : "languages-section"
+      }
+      id="languages"
+    >
+      <Fade bottom duration={800}>
+        <div className="languages-container">
+
+          <h2 className="languages-title">
+            {languages.title || "Langues"}
+          </h2>
+
+          <div className="languages-list">
             {languages.list.map((lang, index) => (
-              <div key={index} className="language-card">
-                <span className="flag">{lang.flag}</span>
-                <span className="language-name">{lang.name}</span>
-                <span className="language-level">{lang.level}</span>
+              <div className="language-item" key={index}>
+                <span className="language-name">
+                  {lang.name}
+                </span>
+
+                <span className="language-level">
+                  {lang.level}
+                </span>
               </div>
             ))}
           </div>
+
         </div>
-      </div>
-    </Fade>
+      </Fade>
+    </section>
   );
 }

@@ -1,92 +1,89 @@
-@import "../../_globalColor.scss";
 
 .exp-section {
-  padding: 90px 0;
-  background-color: $lightBackground2; // Champagne
-  transition: 0.4s;
+  padding: 78px 6%;
+  background: #F3EDF2;
+  transition: background 0.3s ease;
+}
 
-  &.dark-mode {
-    background-color: $darkBackground;
-  }
+.exp-section.dark-mode {
+  background: #28232A;
 }
 
 .exp-container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0;
 }
 
 .exp-header {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 34px;
+}
+
+.exp-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: #302A30;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.exp-ornament {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #B47E6D;
+  color: transparent;
+  margin: 13px auto;
+  border-radius: 10px;
+}
+
+.exp-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.exp-grid-layout > * {
+  min-width: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-grid-layout > *:hover {
+  transform: translateY(-4px);
+}
+
+.dark-mode .exp-title {
+  color: #F5F0F2;
+}
+
+.dark-mode .exp-ornament {
+  background: #D5A18F;
+}
+
+@media screen and (max-width: 800px) {
+  .exp-section {
+    padding: 65px 5%;
+  }
+
+  .exp-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .exp-header {
+    text-align: center;
+  }
 
   .exp-title {
-    font-family: "Playfair Display", serif;
-    font-size: 3.5rem;
-    color: $titleColor;
-    font-weight: 700;
-    margin-bottom: 10px;
+    text-align: center;
   }
 
   .exp-ornament {
-    color: $accentColor; // Gold
-    font-size: 1.5rem;
-    &::before, &::after {
-      content: " ——— ";
-      letter-spacing: -2px;
-      opacity: 0.3;
-    }
+    margin: 13px auto;
   }
-}
-
-/* LA GRILLE MODERNE */
-.exp-grid-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); // 2 colonnes sur grand écran
-  gap: 30px;
-  
-  /* CIBLAGE DE LA CARTE POUR L'EFFET LUXE */
-  .experience-card {
-    background: white !important;
-    border: 1px solid rgba($accentColor, 0.15) !important;
-    border-radius: 20px !important;
-    padding: 35px !important;
-    box-shadow: $lightBoxShadow !important;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    height: 100%; // Pour que toutes les cartes aient la même hauteur
-
-    &:hover {
-      transform: translateY(-8px) !important;
-      border-color: $accentColor !important;
-      box-shadow: 0 20px 40px rgba($primaryColor, 0.15) !important;
-    }
-
-    // Logo styling inside card
-    .experience-card-logo-container {
-        border: 1px solid rgba($primaryColor, 0.1);
-        border-radius: 12px;
-    }
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .exp-grid-layout {
-        grid-template-columns: 1fr; // Retour à 1 colonne sur tablette/mobile
-        max-width: 700px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-  .exp-title { font-size: 2.5rem !important; }
-  .exp-section { padding: 50px 0; }
-}
-
-.dark-mode {
-    .exp-title { color: $textColorDark; }
-    .experience-card {
-        background: lighten($darkBackground, 6%) !important;
-        border-color: rgba($primaryColor, 0.1) !important;
-    }
 }

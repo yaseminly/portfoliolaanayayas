@@ -79,7 +79,7 @@ export default function Greeting() {
             <div className="hero-image-wrapper">
               <div className="hero-image-background"></div>
               <img
-                src={require("../../assets/images/maphoto.jpg")}
+                src={require("../../assets/images/moi.jpeg")}
                 alt="Portrait de Yasmine Laanaya"
                 className="hero-image"
               />

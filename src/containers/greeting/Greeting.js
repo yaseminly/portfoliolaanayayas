@@ -7,7 +7,7 @@ import { greeting, resumeSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 import myCV from "../../assets/images/Yasmine_Laanaya.pdf";
-import myPhoto from "../../assets/images/maphoto.jpg";
+import myPhoto from "../../assets/images/moi.jpeg";
 
 export default function Greeting() {
   const { isDark } = useContext(StyleContext);

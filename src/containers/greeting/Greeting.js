@@ -1,14 +1,16 @@
 
-import React, {useContext} from "react";
-import {Fade} from "react-reveal";
+import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import "./Greeting.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {greeting, resumeSection} from "../../portfolio";
+import { greeting, resumeSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+
 import myCV from "../../assets/images/Yasmine_Laanaya.pdf";
+import myPhoto from "../../assets/images/maphoto.jpg";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
 
   if (!greeting.displayGreeting) return null;
 
@@ -20,7 +22,9 @@ export default function Greeting() {
       >
         <div className="hero-container">
 
+          {/* LEFT CONTENT */}
           <div className="hero-content">
+
             <div className="hero-eyebrow">
               <span className="hero-dot"></span>
               SOFTWARE ENGINEER · MIAGE
@@ -31,15 +35,14 @@ export default function Greeting() {
               <span>Yasmine Laanaya.</span>
             </h1>
 
-            
-<p className="hero-description">
-  Jeune diplômée en ingénierie informatique (MIAGE), j’ai acquis
-  une expérience diversifiée chez Inetum, JESA et Orange Maroc,
-  autour du développement et de l’intégration de solutions
-  logicielles, de l’intelligence artificielle et de la Business
-  Intelligence. J’allie compétences techniques et compréhension
-  des besoins métier pour concevoir des solutions adaptées.
-</p>
+            <p className="hero-description">
+              Jeune diplômée en ingénierie informatique (MIAGE), j’ai acquis
+              une expérience diversifiée chez Inetum, JESA et Orange Maroc,
+              autour du développement et de l’intégration de solutions
+              logicielles, de l’intelligence artificielle et de la Business
+              Intelligence. J’allie compétences techniques et compréhension
+              des besoins métier pour concevoir des solutions adaptées.
+            </p>
 
             <p className="hero-description hero-description-secondary">
               J'aime concevoir des solutions utiles en combinant
@@ -54,6 +57,7 @@ export default function Greeting() {
             </div>
 
             <div className="hero-actions">
+
               <a href="#contact" className="hero-button-primary">
                 Me contacter <span>↗</span>
               </a>
@@ -68,31 +72,45 @@ export default function Greeting() {
                   Consulter mon CV
                 </a>
               )}
+
             </div>
 
             <div className="hero-socials">
               <SocialMedia />
             </div>
+
           </div>
 
+          {/* RIGHT PHOTO */}
           <div className="hero-visual">
+
             <div className="hero-image-wrapper">
+
               <div className="hero-image-background"></div>
+
               <img
-                src={require("../../assets/images/moi.jpeg")}
+                src={myPhoto}
                 alt="Portrait de Yasmine Laanaya"
                 className="hero-image"
+                loading="eager"
               />
+
               <div className="hero-image-caption">
                 <span>Yasmine Laanaya</span>
                 <span>Casablanca, Morocco</span>
               </div>
+
             </div>
 
             <div className="hero-floating-note">
               <span className="note-star">✳</span>
-              <span>Curiosity drives<br />innovation.</span>
+              <span>
+                Curiosity drives
+                <br />
+                innovation.
+              </span>
             </div>
+
           </div>
 
         </div>
@@ -101,6 +119,7 @@ export default function Greeting() {
           <span>SCROLL TO EXPLORE</span>
           <span className="hero-line"></span>
         </div>
+
       </section>
     </Fade>
   );

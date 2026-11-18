@@ -240,9 +240,50 @@ const openSource = {
 
 /* ==================== CERTIFICATIONS ==================== */
 const achievementSection = {
+
 title: emoji("Certifications & Expertise 🏆"),
 subtitle: "Validation académique et professionnelle de mes compétences.",
 clusters: [
+
+{
+  clusterTitle: "SAP & ERP",
+  achievements: [
+    {
+  title: "Exploring SAP Cloud ERP",
+  image: require("./assets/images/sap.png"),
+  description: "Découverte de SAP Cloud ERP, de ses fonctionnalités et de son rôle dans la gestion intégrée des processus métier.",
+  footerLink: [
+    {
+      name: "SAP Learning",
+      url: "https://badger.learning.sap.com/verify/xygyh-tuvyb-nohok-hosok-favap"
+    }
+  ]
+},
+    {
+      title: "Exploring SAP S/4HANA Cloud, Public Edition – Retail",
+      image: require("./assets/images/sap.png"),
+      description: "Gestion des opérations Retail : articles, stocks, approvisionnement, réapprovisionnement et distribution des marchandises.",
+      footerLink: [
+        {
+          name: "SAP Learning",
+          url: "https://badger.learning.sap.com/verify/xyvap-kevas-sysyb-bisig-miviv"
+        }
+      ]
+    },
+    {
+      title: "Executing Basic ERP Processes with SAP S/4HANA",
+      image: require("./assets/images/sap.png"),
+      description: "Maîtrise des processus ERP : Procure-to-Pay, Plan-to-Produce et Order-to-Cash.",
+      footerLink: [
+        {
+          name: "SAP Learning",
+          url: "https://badger.learning.sap.com/verify/xyhek-pefaf-hecef-baryd-rydeb"
+        }
+      ]
+    }
+  ]
+},
+
 {
 clusterTitle: "Oracle & Cloud DevOps",
 achievements: [

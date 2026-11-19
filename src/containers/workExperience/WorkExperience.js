@@ -5,11 +5,16 @@ import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import { workExperiences } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function WorkExperience() {
-  const { isDark } = useContext(StyleContext);
+  const styleContext = useContext(StyleContext) || {};
+  const isDark = styleContext.isDark || false;
+  const { language } = useLanguage();
 
-  if (!workExperiences.display) return null;
+  if (!workExperiences.display) {
+    return null;
+  }
 
   return (
     <section
@@ -20,7 +25,9 @@ export default function WorkExperience() {
         <Fade bottom duration={700} distance="18px">
           <header className="exp-header">
             <h2 className="exp-title">
-              Parcours professionnel
+              {language === "en"
+                ? "Professional Experience"
+                : "Parcours professionnel"}
             </h2>
 
             <div className="exp-ornament" aria-hidden="true" />
@@ -39,6 +46,7 @@ export default function WorkExperience() {
               <ExperienceCard
                 cardInfo={card}
                 isDark={isDark}
+                language={language}
               />
             </Fade>
           ))}

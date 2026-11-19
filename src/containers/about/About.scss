@@ -1,0 +1,114 @@
+
+.about-section {
+  width: 100%;
+  padding: 90px 8%;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #34313d;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.about-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.about-eyebrow {
+  margin-bottom: 18px;
+  color: #b47782;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.about-title {
+  max-width: 850px;
+  margin: 0 0 30px;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.25;
+  font-weight: 600;
+  color: #34313d;
+}
+
+.about-content {
+  max-width: 850px;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #686571;
+}
+
+.about-focus {
+  margin-top: 35px;
+}
+
+.about-focus > span {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #77717f;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-tags span {
+  padding: 9px 15px;
+  border: 1px solid #eadde5;
+  border-radius: 30px;
+  background: #fbf7f9;
+  color: #8e6678;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.about-tags span:hover {
+  border-color: #c99eae;
+  background: #f5edf1;
+}
+
+.about-section.dark-mode {
+  background: #1d1b24;
+  color: #f4f0f5;
+}
+
+.about-section.dark-mode .about-title {
+  color: #f4f0f5;
+}
+
+.about-section.dark-mode .about-content p,
+.about-section.dark-mode .about-focus > span {
+  color: #c2bdca;
+}
+
+.about-section.dark-mode .about-tags span {
+  border-color: #49404e;
+  background: #292530;
+  color: #e0b9cb;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 65px 7%;
+  }
+
+  .about-title {
+    font-size: 29px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-tags {
+    gap: 8px;
+  }
+}

@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Header.scss";
-import { greeting } from "../../portfolio";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,12 +11,17 @@ function Header() {
   const [status, setStatus] = useState("");
   const formRef = useRef(null);
 
+  const { language, toggleLanguage } = useLanguage();
+  const isFrench = language === "fr";
+
   const navItems = [
-    { label: "Expertise", href: "#skills" },
-    { label: "Formation", href: "#education" },
-    { label: "Expérience", href: "#experience" },
-    { label: "Projets", href: "#projects" },
-    { label: "Contact", href: "#contact" }
+    { label: isFrench ? "À propos" : "About", href: "#greeting" },
+    { label: isFrench ? "Expertise" : "Expertise", href: "#skills" },
+    { label: isFrench ? "Formation" : "Education", href: "#education" },
+    { label: isFrench ? "Expérience" : "Experience", href: "#experience" },
+    { label: isFrench ? "Projets" : "Projects", href: "#projects" },
+    { label: "Certifications", href: "#achievements" },
+    { label: isFrench ? "Contact" : "Contact", href: "#contact" },
   ];
 
   const openContact = () => {
@@ -45,7 +50,7 @@ function Header() {
         "template_8z8iqnr",
         formRef.current,
         {
-          publicKey: "UmATMCbgItO78-laT"
+          publicKey: "UmATMCbgItO78-laT",
         }
       );
 
@@ -74,7 +79,7 @@ function Header() {
           <button
             className="mobile-menu-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Ouvrir le menu"
+            aria-label={isFrench ? "Ouvrir le menu" : "Open menu"}
             aria-expanded={menuOpen}
             type="button"
           >
@@ -83,15 +88,11 @@ function Header() {
           </button>
 
           <nav
-            className={
-              menuOpen
-                ? "editorial-links open"
-                : "editorial-links"
-            }
+            className={menuOpen ? "editorial-links open" : "editorial-links"}
           >
             {navItems.map((item) => (
               <a
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
               >
@@ -101,10 +102,21 @@ function Header() {
 
             <button
               type="button"
+              className="language-switch"
+              onClick={toggleLanguage}
+              aria-label={isFrench ? "Switch to English" : "Passer en français"}
+            >
+              <span className={language === "fr" ? "active" : ""}>FR</span>
+              <span className="language-divider">/</span>
+              <span className={language === "en" ? "active" : ""}>EN</span>
+            </button>
+
+            <button
+              type="button"
               className="nav-contact"
               onClick={openContact}
             >
-              Let's talk <span>↗</span>
+              {isFrench ? "Me contacter" : "Let's talk"} <span>↗</span>
             </button>
           </nav>
         </div>
@@ -129,7 +141,7 @@ function Header() {
               type="button"
               className="contact-modal-close"
               onClick={closeContact}
-              aria-label="Fermer"
+              aria-label={isFrench ? "Fermer" : "Close"}
               disabled={sending}
             >
               ×
@@ -137,16 +149,18 @@ function Header() {
 
             <div className="contact-modal-heading">
               <span className="contact-modal-eyebrow">
-                RESTONS EN CONTACT
+                {isFrench ? "RESTONS EN CONTACT" : "LET'S CONNECT"}
               </span>
 
               <h2 id="contact-modal-title">
-                Let's talk<span>.</span>
+                {isFrench ? "Échangeons" : "Let's talk"}
+                <span>.</span>
               </h2>
 
               <p>
-                Une question, une opportunité ou simplement envie
-                d'échanger ? Envoyez-moi un message.
+                {isFrench
+                  ? "Une question, une opportunité ou simplement envie d'échanger ? Envoyez-moi un message."
+                  : "Have a question, an opportunity or simply want to connect? Send me a message."}
               </p>
             </div>
 
@@ -156,18 +170,22 @@ function Header() {
               onSubmit={handleSubmit}
             >
               <div className="contact-form-group">
-                <label htmlFor="contact-name">Votre nom</label>
+                <label htmlFor="contact-name">
+                  {isFrench ? "Votre nom" : "Your name"}
+                </label>
                 <input
                   id="contact-name"
                   type="text"
                   name="from_name"
-                  placeholder="Votre nom complet"
+                  placeholder={isFrench ? "Votre nom complet" : "Your full name"}
                   required
                 />
               </div>
 
               <div className="contact-form-group">
-                <label htmlFor="contact-email">Votre adresse e-mail</label>
+                <label htmlFor="contact-email">
+                  {isFrench ? "Votre adresse e-mail" : "Your email address"}
+                </label>
                 <input
                   id="contact-email"
                   type="email"
@@ -178,36 +196,50 @@ function Header() {
               </div>
 
               <div className="contact-form-group">
-                <label htmlFor="contact-subject">Sujet</label>
+                <label htmlFor="contact-subject">
+                  {isFrench ? "Sujet" : "Subject"}
+                </label>
                 <input
                   id="contact-subject"
                   type="text"
                   name="subject"
-                  placeholder="Objet de votre message"
+                  placeholder={
+                    isFrench ? "Objet de votre message" : "Message subject"
+                  }
                   required
                 />
               </div>
 
               <div className="contact-form-group">
-                <label htmlFor="contact-message">Votre message</label>
+                <label htmlFor="contact-message">
+                  {isFrench ? "Votre message" : "Your message"}
+                </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   rows="4"
-                  placeholder="Écrivez votre message ici..."
+                  placeholder={
+                    isFrench
+                      ? "Écrivez votre message ici..."
+                      : "Write your message here..."
+                  }
                   required
                 />
               </div>
 
               {status === "success" && (
                 <p className="contact-form-status success">
-                  Votre message a bien été envoyé. Merci !
+                  {isFrench
+                    ? "Votre message a bien été envoyé. Merci !"
+                    : "Your message has been sent successfully. Thank you!"}
                 </p>
               )}
 
               {status === "error" && (
                 <p className="contact-form-status error">
-                  L'envoi a échoué. Veuillez réessayer.
+                  {isFrench
+                    ? "L'envoi a échoué. Veuillez réessayer."
+                    : "Sending failed. Please try again."}
                 </p>
               )}
 
@@ -216,7 +248,13 @@ function Header() {
                 className="contact-submit-button"
                 disabled={sending}
               >
-                {sending ? "Envoi en cours..." : "Envoyer le message"}
+                {sending
+                  ? isFrench
+                    ? "Envoi en cours..."
+                    : "Sending..."
+                  : isFrench
+                    ? "Envoyer le message"
+                    : "Send message"}
                 {!sending && <span>↗</span>}
               </button>
             </form>

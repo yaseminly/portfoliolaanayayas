@@ -354,7 +354,7 @@ const languages = {
 
 /* ==================== CONTACT ==================== */
 const contactInfo = {
-  title: emoji("Contactez-moi ☎️"),
+  title: emoji("Contactez-moi "),
   subtitle: "À l'écoute d'opportunités ambitieuses en Ingénierie Logicielle, IA et SI.",
   email_address: "yasminelaanayapro@gmail.com",
   phone_number: "+212 6 94 37 37 12",

@@ -28,6 +28,7 @@
   font-weight: 600;
   color: #29252B;
   margin-bottom: 10px;
+  letter-spacing: -0.4px;
 }
 
 .title-underline {
@@ -38,9 +39,11 @@
 }
 
 .projects-subtitle {
-  font-size: 0.88rem;
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.7;
   color: #827982;
-  margin: 0;
 }
 
 /* GRID */
@@ -48,7 +51,7 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 22px;
   align-items: stretch;
 }
 
@@ -62,18 +65,22 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(41, 37, 43, 0.07);
+  transform: translateY(-3px);
+  border-color: #DCC9C5;
+  box-shadow: 0 9px 22px rgba(41, 37, 43, 0.07);
 }
 
 /* IMAGE */
 
 .project-image-container {
-  height: 135px;
+  height: 155px;
   position: relative;
   overflow: hidden;
   background: #E9DFF0;
@@ -88,25 +95,37 @@
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.04);
+  transform: scale(1.035);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(41, 37, 43, 0.2),
+    transparent 55%
+  );
+  pointer-events: none;
 }
 
 .main-tech-badge {
   position: absolute;
   bottom: 10px;
   left: 12px;
-  padding: 4px 9px;
+  padding: 5px 9px;
   border-radius: 5px;
-  background: rgba(255, 254, 252, 0.95);
+  background: rgba(255, 254, 252, 0.96);
   color: #655667;
   font-size: 0.7rem;
   font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 /* CONTENT */
 
 .project-content {
-  padding: 17px 18px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -117,15 +136,15 @@
   font-size: 1.12rem;
   font-weight: 600;
   color: #29252B;
-  margin: 0 0 8px;
+  margin: 0 0 9px;
   line-height: 1.4;
 }
 
 .project-description {
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  line-height: 1.7;
   color: #706871;
-  margin: 0 0 13px;
+  margin: 0 0 15px;
 }
 
 /* TECHNOLOGIES */
@@ -133,24 +152,31 @@
 .project-tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 15px;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 16px;
 }
 
 .tech-tag {
-  padding: 4px 8px;
+  padding: 5px 9px;
   border-radius: 5px;
   background: #EDE5EF;
   color: #66556D;
-  font-size: 0.69rem;
+  font-size: 0.7rem;
   font-weight: 500;
+}
+
+.tech-tag-more {
+  font-size: 0.7rem;
+  color: #827982;
+  padding: 4px 3px;
 }
 
 /* FOOTER */
 
 .project-footer {
   margin-top: auto;
-  padding-top: 11px;
+  padding-top: 12px;
   border-top: 1px solid #EAE2DA;
 }
 
@@ -160,17 +186,23 @@
   gap: 7px;
   color: #A66E5E;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.81rem;
   font-weight: 600;
-  transition: gap 0.2s ease;
+  transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .project-link-btn:hover {
-  gap: 11px;
+  gap: 10px;
+  color: #875749;
+}
+
+.link-icon {
+  width: 15px;
+  height: 15px;
 }
 
 .project-internal {
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   color: #969097;
 }
 
@@ -179,6 +211,10 @@
 .dark-mode .project-card {
   background: #353039;
   border-color: #49414C;
+}
+
+.dark-mode .project-card:hover {
+  border-color: #756477;
 }
 
 .dark-mode .projects-title,
@@ -196,8 +232,24 @@
   color: #E9DFF0;
 }
 
+.dark-mode .tech-tag-more {
+  color: #C1B8C3;
+}
+
 .dark-mode .project-footer {
   border-color: #49414C;
+}
+
+.dark-mode .project-link-btn {
+  color: #D9A99B;
+}
+
+.dark-mode .project-link-btn:hover {
+  color: #F0C5B8;
+}
+
+.dark-mode .project-internal {
+  color: #B2A8B5;
 }
 
 /* RESPONSIVE */
@@ -207,10 +259,11 @@
     grid-template-columns: 1fr;
     max-width: 520px;
     margin: 0 auto;
+    gap: 18px;
   }
 
   .project-image-container {
-    height: 155px;
+    height: 165px;
   }
 }
 
@@ -228,10 +281,31 @@
   }
 
   .projects-header {
-    margin-bottom: 25px;
+    margin-bottom: 27px;
+  }
+
+  .projects-subtitle {
+    font-size: 0.84rem;
   }
 
   .project-content {
     padding: 15px;
+  }
+
+  .project-image-container {
+    height: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image,
+  .project-link-btn {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .project-card:hover .project-image {
+    transform: none;
   }
 }
